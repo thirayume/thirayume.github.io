@@ -162,6 +162,13 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-siz
 .lightbox img{max-width:92vw;max-height:80vh;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
 .lightbox .lcap{color:#dfe7f3;max-width:820px;text-align:center;font-size:14px}
 .lightbox .lx{position:absolute;top:16px;right:26px;font-size:32px;color:#fff;cursor:pointer;line-height:1}
+.gpager{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:24px}
+.garr{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:20px;cursor:pointer;line-height:1;transition:.2s;display:grid;place-items:center}
+.garr:hover{border-color:transparent;color:#fff;background:var(--accent)}
+.gdots{display:flex;gap:8px;align-items:center}
+.gdot{width:9px;height:9px;border-radius:50%;background:var(--line);cursor:pointer;transition:.25s}
+.gdot.on{background:var(--accent);width:24px;border-radius:6px}
+.gcount{color:var(--soft);font-size:13px;min-width:56px;text-align:right;font-variant-numeric:tabular-nums}
 @media(max-width:900px){.ggrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.ggrid{grid-template-columns:1fr}}
 .docrow{display:grid;grid-template-columns:130px 1fr;gap:4px 16px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14px}
@@ -323,6 +330,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-siz
     <p class="lead reveal" style="margin-top:14px" data-i18n="gal.sub"></p>
     <div class="gfilters reveal" id="gfilters" style="margin-top:24px"></div>
     <div class="ggrid" id="ggrid"></div>
+    <div class="gpager" id="gpager"></div>
   </div>
 </section>
 
@@ -529,29 +537,43 @@ function render(){
   setupGallery();
   observe();
 }
+let galCat="__all", galPage=0, galTimer=null;
+const GAL_PER=9;
 function gcap(g){ return (g.caption && g.caption[lang]) || (g.title && g.title[lang]) || ""; }
+function galFiltered(){ const gal=DATA.gallery||[]; return galCat==="__all"?gal:gal.filter(g=>g.category===galCat); }
+function galPageCount(){ return Math.max(1, Math.ceil(galFiltered().length/GAL_PER)); }
 function setupGallery(){
-  const gal = DATA.gallery || [];
-  const sec = document.getElementById("gallery");
-  if (!gal.length){ if(sec) sec.style.display="none"; return; }
+  const gal=DATA.gallery||[], sec=document.getElementById("gallery");
+  if(!gal.length){ if(sec) sec.style.display="none"; return; }
   if(sec) sec.style.display="";
-  const cats = ["__all"].concat([...new Set(gal.map(g=>g.category).filter(Boolean))]);
-  const fw = $("#gfilters");
-  fw.innerHTML = cats.map((c,i)=>`<button data-cat="${c}" class="${i===0?'active':''}">${c==="__all"?I18N[lang]["gal.all"]:c}</button>`).join("");
-  fw.querySelectorAll("button").forEach(b=>b.onclick=()=>{fw.querySelectorAll("button").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderGrid(b.dataset.cat);});
-  renderGrid("__all");
+  if(galCat!=="__all" && !gal.some(g=>g.category===galCat)) galCat="__all";
+  const cats=["__all"].concat([...new Set(gal.map(g=>g.category).filter(Boolean))]);
+  const fw=$("#gfilters");
+  fw.innerHTML=cats.map(c=>`<button data-cat="${c}" class="${c===galCat?'active':''}">${c==="__all"?I18N[lang]["gal.all"]:c}</button>`).join("");
+  fw.querySelectorAll("button").forEach(b=>b.onclick=()=>{ galCat=b.dataset.cat; galPage=0; setupGallery(); });
+  renderGrid();
 }
-function renderGrid(cat){
-  const gal = DATA.gallery || [];
-  const items = cat==="__all" ? gal : gal.filter(g=>g.category===cat);
-  $("#ggrid").innerHTML = items.map(g=>{
-    const cap = gcap(g), idx = gal.indexOf(g);
-    return `<div class="gcard" data-i="${idx}"><span class="badge2">${g.category||""}</span><img loading="lazy" src="${g.thumb||g.file}" alt="${cap.replace(/"/g,'&quot;')}">${cap?`<div class="cap">${cap}</div>`:""}</div>`;
-  }).join("");
+function renderGrid(){
+  const gal=DATA.gallery||[], items=galFiltered(), pages=galPageCount();
+  if(galPage>=pages) galPage=0;
+  const slice=items.slice(galPage*GAL_PER, galPage*GAL_PER+GAL_PER);
+  $("#ggrid").innerHTML=slice.map(g=>{ const cap=gcap(g), idx=gal.indexOf(g);
+    return `<div class="gcard" data-i="${idx}"><span class="badge2">${g.category||""}</span><img loading="lazy" src="${g.thumb||g.file}" alt="${cap.replace(/"/g,'&quot;')}">${cap?`<div class="cap">${cap}</div>`:""}</div>`; }).join("");
   $("#ggrid").querySelectorAll(".gcard").forEach(c=>c.onclick=()=>openLight(+c.dataset.i));
-  observe();
+  const pg=$("#gpager");
+  if(pages<=1){ pg.innerHTML=""; }
+  else{
+    const dots=Array.from({length:pages},(_,i)=>`<span class="gdot ${i===galPage?'on':''}" data-p="${i}"></span>`).join("");
+    pg.innerHTML=`<button class="garr" data-d="-1" aria-label="previous">&#8249;</button><div class="gdots">${dots}</div><button class="garr" data-d="1" aria-label="next">&#8250;</button><span class="gcount">${galPage+1} / ${pages}</span>`;
+    pg.querySelector('[data-d="-1"]').onclick=()=>galGo(galPage-1);
+    pg.querySelector('[data-d="1"]').onclick=()=>galGo(galPage+1);
+    pg.querySelectorAll(".gdot").forEach(d=>d.onclick=()=>galGo(+d.dataset.p));
+  }
+  galAuto();
 }
-function openLight(i){ const g=(DATA.gallery||[])[i]; if(!g)return; $("#lightImg").src=g.file; $("#lightCap").textContent=gcap(g); $("#lightbox").classList.add("open"); }
+function galGo(p){ const pages=galPageCount(); galPage=((p%pages)+pages)%pages; renderGrid(); }
+function galAuto(){ clearInterval(galTimer); if(galPageCount()>1) galTimer=setInterval(()=>galGo(galPage+1), 5000); }
+function openLight(i){ const g=(DATA.gallery||[])[i]; if(!g)return; clearInterval(galTimer); $("#lightImg").src=g.file; $("#lightCap").textContent=gcap(g); $("#lightbox").classList.add("open"); }
 // rotor
 let ri=0;
 function rotor(){
@@ -570,9 +592,11 @@ $("#lang").onclick=()=>{lang=lang==="en"?"th":"en";localStorage.setItem("lang",l
 $("#theme").onclick=()=>{theme=theme==="dark"?"light":"dark";localStorage.setItem("theme",theme);document.documentElement.dataset.theme=theme;};
 $("#burger").onclick=()=>$("#nav").classList.toggle("open");
 $("#nav").querySelectorAll("a").forEach(a=>a.onclick=()=>$("#nav").classList.remove("open"));
-$("#lightClose").onclick=()=>$("#lightbox").classList.remove("open");
-$("#lightbox").onclick=e=>{if(e.target.id==="lightbox")$("#lightbox").classList.remove("open");};
-document.addEventListener("keydown",e=>{if(e.key==="Escape")$("#lightbox").classList.remove("open");});
+function closeLight(){ $("#lightbox").classList.remove("open"); galAuto(); }
+$("#lightClose").onclick=closeLight;
+$("#lightbox").onclick=e=>{if(e.target.id==="lightbox")closeLight();};
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeLight();});
+(function(){const gs=document.getElementById("gallery"); if(gs){ gs.addEventListener("mouseenter",()=>clearInterval(galTimer)); gs.addEventListener("mouseleave",()=>galAuto()); }})();
 window.addEventListener("scroll",()=>$("#hdr").classList.toggle("scrolled",scrollY>20));
 $("#yr").textContent=new Date().getFullYear();
 apply(); rotor(); setInterval(rotor,2600);
