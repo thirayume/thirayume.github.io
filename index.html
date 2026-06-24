@@ -177,6 +177,11 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-siz
 .certchips{display:flex;flex-wrap:wrap;gap:9px}
 .certchips .cc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 14px;font-size:13px;color:var(--soft)}
 @media(max-width:740px){.edu-grid{grid-template-columns:1fr}}
+.stackgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;margin-top:14px}
+.stackrow{padding:12px 0;border-bottom:1px solid var(--line)}
+.stackrow .sg{color:var(--accent);font-weight:700;font-size:13.5px;margin-bottom:3px}
+.stackrow .si{color:var(--soft);font-size:13.5px;line-height:1.55}
+@media(max-width:740px){.stackgrid{grid-template-columns:1fr}}
 /* reveal */
 .reveal{opacity:0;transform:translateY(26px);transition:.7s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
@@ -274,6 +279,8 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-siz
     <h2 class="sec reveal" data-i18n="exp.title"></h2>
     <p class="lead reveal" style="margin-top:14px" data-i18n="exp.sub"></p>
     <div class="grid cards3" id="expertise-cards" style="margin-top:36px"></div>
+    <h3 class="reveal" style="font-size:18px;font-weight:700;margin:42px 0 4px" data-i18n="exp.stack"></h3>
+    <div class="stackgrid reveal" id="stack"></div>
   </div>
 </section>
 
@@ -387,7 +394,7 @@ const I18N = {
   "hero.kicker":"Available for advisory & collaboration","hero.iam":"Hi, I'm","hero.justa":"I am just a","hero.lead":"Ph.D. researcher and full-stack technology leader bridging advanced AI, software architecture, and business strategy — delivering national-scale healthcare platforms for government and enterprise solutions for clients worldwide.","hero.cta1":"Let's talk","hero.cta2":"Download CV",
   "stat.years":"Years in technology","stat.pubs":"Research publications","stat.countries":"Countries delivered (TH · CH · US)","stat.gov":"Government agencies served",
   "about.eyebrow":"About","about.title":"Bridging code, research & business.","about.p1":"I'm Thirayu Meererksom — a technologist with a rare triple background: advanced technology (AI & full-stack), medical research (Ph.D. in Translational Medicine), and business strategy (MBA). Over 15+ years I've shipped national-scale AI healthcare platforms, enterprise systems, and mobile products.","about.p2":"I've partnered with a Swiss healthcare firm for over a decade, advised SMEs as a certified coach, and trained thousands across Thai government agencies and universities — translating deep technical work into real-world impact.",
-  "exp.eyebrow":"What I do","exp.title":"Expertise","exp.sub":"From research models to production systems and the strategy that ties them together.",
+  "exp.eyebrow":"What I do","exp.title":"Expertise","exp.sub":"From research models to production systems and the strategy that ties them together.","exp.stack":"Full tech stack",
   "career.eyebrow":"Journey","career.title":"Experience",
   "proj.eyebrow":"Selected work","proj.title":"Projects & Systems","proj.sub":"A selection across AI healthcare, enterprise platforms, and mobile.",
   "res.eyebrow":"Research","res.title":"Publications","res.badge":"Featured · Nature portfolio","res.more":"12+ peer-reviewed journal articles & international conference papers.",
@@ -402,7 +409,7 @@ const I18N = {
   "hero.kicker":"เปิดรับงานที่ปรึกษาและความร่วมมือ","hero.iam":"สวัสดีครับ ผมคือ","hero.justa":"ผมเป็นเพียง","hero.lead":"นักวิจัยระดับปริญญาเอกและผู้นำด้านเทคโนโลยีแบบ Full-Stack ที่เชื่อมโยง AI ขั้นสูง สถาปัตยกรรมซอฟต์แวร์ และกลยุทธ์ธุรกิจ — พัฒนาแพลตฟอร์มสาธารณสุขระดับประเทศให้ภาครัฐ และโซลูชันองค์กรให้ลูกค้าทั่วโลก","hero.cta1":"พูดคุยกัน","hero.cta2":"ดาวน์โหลด CV",
   "stat.years":"ปีในสายเทคโนโลยี","stat.pubs":"ผลงานวิจัยตีพิมพ์","stat.countries":"ประเทศที่ส่งมอบงาน (ไทย · สวิส · สหรัฐฯ)","stat.gov":"หน่วยงานภาครัฐที่ร่วมงาน",
   "about.eyebrow":"เกี่ยวกับ","about.title":"เชื่อมโค้ด งานวิจัย และธุรกิจ","about.p1":"ผม ถิรายุ มีฤกษ์สม — นักเทคโนโลยีที่มีพื้นฐานครบทั้งสามด้าน: เทคโนโลยีขั้นสูง (AI และ Full-Stack) งานวิจัยทางการแพทย์ (ปริญญาเอกเวชศาสตร์ปริวรรต) และกลยุทธ์ธุรกิจ (MBA) ตลอดกว่า 15 ปี ผมพัฒนาแพลตฟอร์ม AI สาธารณสุขระดับประเทศ ระบบองค์กร และแอปพลิเคชันมือถือ","about.p2":"ผมเป็นพันธมิตรกับบริษัทสุขภาพในสวิตเซอร์แลนด์มากว่าทศวรรษ ให้คำปรึกษา SME ในฐานะโค้ชที่ได้รับการรับรอง และเป็นวิทยากรให้หน่วยงานรัฐและมหาวิทยาลัยทั่วประเทศ",
-  "exp.eyebrow":"สิ่งที่ผมทำ","exp.title":"ความเชี่ยวชาญ","exp.sub":"ตั้งแต่โมเดลงานวิจัย สู่ระบบใช้งานจริง และกลยุทธ์ที่เชื่อมทุกอย่างเข้าด้วยกัน",
+  "exp.eyebrow":"สิ่งที่ผมทำ","exp.title":"ความเชี่ยวชาญ","exp.sub":"ตั้งแต่โมเดลงานวิจัย สู่ระบบใช้งานจริง และกลยุทธ์ที่เชื่อมทุกอย่างเข้าด้วยกัน","exp.stack":"เทคโนโลยีที่ใช้ทั้งหมด",
   "career.eyebrow":"เส้นทาง","career.title":"ประสบการณ์",
   "proj.eyebrow":"ผลงานคัดสรร","proj.title":"ผลงานและระบบ","proj.sub":"ตัวอย่างผลงานด้าน AI สาธารณสุข ระบบองค์กร และโมบาย",
   "res.eyebrow":"งานวิจัย","res.title":"ผลงานตีพิมพ์","res.badge":"ผลงานเด่น · เครือ Nature","res.more":"บทความวารสารและการประชุมวิชาการนานาชาติกว่า 12 ชิ้น",
@@ -480,7 +487,7 @@ const DATA={
 // sync factual lists from the master Excel (portfolio/assets/data.js)
 if (window.CVDATA) {
   const cd = window.CVDATA;
-  ["timeline","projects","pubs","clients","topics","members","gallery","documents","education","certifications"].forEach(k => { if (cd[k]) DATA[k] = cd[k]; });
+  ["timeline","projects","pubs","clients","topics","members","gallery","documents","education","certifications","skills"].forEach(k => { if (cd[k]) DATA[k] = cd[k]; });
 }
 let lang = localStorage.getItem("lang") || "en";
 let theme = localStorage.getItem("theme") || "dark";
@@ -501,6 +508,7 @@ function render(){
   $("#facts").innerHTML = DATA.facts[lang].map(([k,v])=>`<div class="row"><span class="k">${k}</span><span class="v">${v}</span></div>`).join("");
   // expertise
   $("#expertise-cards").innerHTML = DATA.expertise[lang].map(([ic,h,p,tags])=>`<div class="card reveal"><div class="ic">${ic}</div><h3>${h}</h3><p>${p}</p><div class="tags">${tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div></div>`).join("");
+  if (DATA.skills) $("#stack").innerHTML = DATA.skills[lang].map(([g,it])=>`<div class="stackrow"><div class="sg">${g}</div><div class="si">${it}</div></div>`).join("");
   // timeline
   $("#timeline").innerHTML = DATA.timeline[lang].map(([w,h,o,p])=>`<div class="item"><div class="when">${w}</div><h3>${h}</h3><div class="org">${o}</div><p>${p}</p></div>`).join("");
   // projects

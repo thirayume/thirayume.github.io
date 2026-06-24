@@ -2358,6 +2358,68 @@ window.CVDATA = {
    "ที่ปรึกษาไทย ศูนย์ข้อมูลที่ปรึกษา สำนักงานบริหารหนี้สาธารณะ (สบน.) [หมายเลข 6481 ระดับ 3]"
   ]
  },
+ "skills": {
+  "en": [
+   [
+    "Frontend",
+    "HTML5, CSS3/SASS, JavaScript, TypeScript; Angular, React/Next.js, Vue/Nuxt.js; Webpack/Vite; Bootstrap, Tailwind, Material UI"
+   ],
+   [
+    "Backend",
+    ".NET / .NET Core (C#, VB.NET), PHP (Laravel), Python (FastAPI/Flask), Node.js/Express, Java; REST & WCF Web Services, LINE LIFF/Messaging API"
+   ],
+   [
+    "AI / Data",
+    "Computer Vision (YOLO, TensorFlow/PyTorch), Deep Learning, NLP, Data Science, SARIMA/Time-Series forecasting, Business Intelligence"
+   ],
+   [
+    "Databases",
+    "MS SQL Server, MySQL, PostgreSQL, Oracle; MongoDB, CouchDB, ElasticSearch; Neo4j (graph); RabbitMQ; Redis"
+   ],
+   [
+    "Cloud / DevOps",
+    "Docker, Kubernetes, Kong API Gateway, NGINX, Portainer; Azure, AWS, GCP; CI/CD (Azure DevOps, GitHub Actions); VMware; Linux / Windows Server / macOS"
+   ],
+   [
+    "Mobile",
+    "Android (Java), iOS (Objective-C, Swift); Flutter/Dart, React Native, Ionic; Unity"
+   ],
+   [
+    "Business / Other",
+    "Agile & Waterfall, BA/SA, System & Platform Architecture, UI/UX, ERP (Odoo, ERPNext), IoT/RFID, MarTech, Adobe Creative Cloud, SME Coaching"
+   ]
+  ],
+  "th": [
+   [
+    "ฟรอนต์เอนด์",
+    "HTML5, CSS3/SASS, JavaScript, TypeScript; Angular, React/Next.js, Vue/Nuxt.js; Webpack/Vite; Bootstrap, Tailwind, Material UI"
+   ],
+   [
+    "แบ็กเอนด์",
+    ".NET / .NET Core (C#, VB.NET), PHP (Laravel), Python (FastAPI/Flask), Node.js/Express, Java; REST & WCF Web Services, LINE LIFF/Messaging API"
+   ],
+   [
+    "AI / ข้อมูล",
+    "Computer Vision (YOLO, TensorFlow/PyTorch), Deep Learning, NLP, Data Science, SARIMA/Time-Series forecasting, Business Intelligence"
+   ],
+   [
+    "ฐานข้อมูล",
+    "MS SQL Server, MySQL, PostgreSQL, Oracle; MongoDB, CouchDB, ElasticSearch; Neo4j (graph); RabbitMQ; Redis"
+   ],
+   [
+    "คลาวด์ / DevOps",
+    "Docker, Kubernetes, Kong API Gateway, NGINX, Portainer; Azure, AWS, GCP; CI/CD (Azure DevOps, GitHub Actions); VMware; Linux / Windows Server / macOS"
+   ],
+   [
+    "โมบาย",
+    "Android (Java), iOS (Objective-C, Swift); Flutter/Dart, React Native, Ionic; Unity"
+   ],
+   [
+    "ธุรกิจ / อื่น ๆ",
+    "Agile & Waterfall, BA/SA, System & Platform Architecture, UI/UX, ERP (Odoo, ERPNext), IoT/RFID, MarTech, Adobe Creative Cloud, SME Coaching"
+   ]
+  ]
+ },
  "profile": {
   "name": {
    "en": "Thirayu Meererksom",
@@ -2374,7 +2436,7 @@ window.CVDATA = {
   "phone": "+66 95-605-7324",
   "email": "thirayu.m@gmail.com",
   "email2": "thirayu.m@kasira.biz",
-  "website": "https://thirayu.in.th",
+  "website": "https://thirayume.github.io",
   "linkedin": "https://www.linkedin.com/in/thirayume",
   "orcid": "0000-0001-6414-3607",
   "github1": "https://github.com/thirayume",
