@@ -186,9 +186,20 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-siz
 @media(max-width:740px){.edu-grid{grid-template-columns:1fr}}
 .stackgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 32px;margin-top:14px}
 .stackrow{padding:12px 0;border-bottom:1px solid var(--line)}
-.stackrow .sg{color:var(--accent);font-weight:700;font-size:13.5px;margin-bottom:3px}
-.stackrow .si{color:var(--soft);font-size:13.5px;line-height:1.55}
+.stackrow .sg{color:var(--accent);font-weight:700;font-size:13.5px;margin-bottom:8px}
+.stackrow .sgchips{display:flex;flex-wrap:wrap;gap:7px}
+.sgchip{background:color-mix(in srgb,var(--accent) 13%,transparent);border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:5px 12px;font-size:12.5px;font-weight:500;transition:.2s}
+.sgchip:hover{border-color:color-mix(in srgb,var(--accent) 55%,var(--line))}
 @media(max-width:740px){.stackgrid{grid-template-columns:1fr}}
+.pubgh{color:var(--accent);font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;margin:18px 0 8px}
+.pubgh span{color:var(--mut);font-weight:600}
+.teamcard{display:flex;gap:16px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;transition:.25s}
+.teamcard:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.teamcard img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex:0 0 auto}
+.teamcard .tn{font-weight:700;font-size:16px}
+.teamcard .tr{color:var(--soft);font-size:13.5px;margin-top:2px}
+.teamcard .arr{margin-left:auto;color:var(--accent);font-size:20px;transition:.2s}
+.teamcard:hover .arr{transform:translateX(4px)}
 /* reveal */
 .reveal{opacity:0;transform:translateY(26px);transition:.7s cubic-bezier(.2,.7,.2,1)}
 .reveal.in{opacity:1;transform:none}
@@ -213,9 +224,11 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-siz
       <a href="#about" data-i18n="nav.about"></a>
       <a href="#expertise" data-i18n="nav.expertise"></a>
       <a href="#experience" data-i18n="nav.experience"></a>
+      <a href="#education" data-i18n="nav.education"></a>
       <a href="#projects" data-i18n="nav.projects"></a>
       <a href="#gallery" data-i18n="nav.gallery"></a>
       <a href="#research" data-i18n="nav.research"></a>
+      <a href="#speaking" data-i18n="nav.speaking"></a>
       <a href="#contact" data-i18n="nav.contact"></a>
     </div>
     <div class="tools">
@@ -363,6 +376,10 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-siz
       <h3 style="font-size:17px;font-weight:700;margin-bottom:14px" data-i18n="spk.lead"></h3>
       <div class="grid cards3" id="member-cards"></div>
     </div>
+    <div class="reveal" style="margin-top:34px">
+      <h3 style="font-size:17px;font-weight:700;margin-bottom:14px" data-i18n="spk.team"></h3>
+      <div class="grid cards2" id="team-cards"></div>
+    </div>
     <div class="reveal" style="margin-top:30px">
       <h3 id="docs-h" style="font-size:17px;font-weight:700;margin-bottom:12px" data-i18n="spk.docs"></h3>
       <div id="doclist"></div>
@@ -398,22 +415,22 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-siz
 <script>
 const I18N = {
  en:{
-  "nav.about":"About","nav.expertise":"Expertise","nav.experience":"Experience","nav.projects":"Projects","nav.research":"Research","nav.contact":"Contact",
+  "nav.about":"About","nav.expertise":"Expertise","nav.experience":"Experience","nav.education":"Education","nav.projects":"Projects","nav.research":"Research","nav.speaking":"Speaking","nav.contact":"Contact",
   "hero.kicker":"Available for advisory & collaboration","hero.iam":"Hi, I'm","hero.justa":"I am just a","hero.lead":"Ph.D. researcher and full-stack technology leader bridging advanced AI, software architecture, and business strategy — delivering national-scale healthcare platforms for government and enterprise solutions for clients worldwide.","hero.cta1":"Let's talk","hero.cta2":"Download CV",
   "stat.years":"Years in technology","stat.pubs":"Research publications","stat.countries":"Countries delivered (TH · CH · US)","stat.gov":"Government agencies served",
   "about.eyebrow":"About","about.title":"Bridging code, research & business.","about.p1":"I'm Thirayu Meererksom — a technologist with a rare triple background: advanced technology (AI & full-stack), medical research (Ph.D. in Translational Medicine), and business strategy (MBA). Over 15+ years I've shipped national-scale AI healthcare platforms, enterprise systems, and mobile products.","about.p2":"I've partnered with a Swiss healthcare firm for over a decade, advised SMEs as a certified coach, and trained thousands across Thai government agencies and universities — translating deep technical work into real-world impact.",
   "exp.eyebrow":"What I do","exp.title":"Expertise","exp.sub":"From research models to production systems and the strategy that ties them together.","exp.stack":"Full tech stack",
   "career.eyebrow":"Journey","career.title":"Experience",
   "proj.eyebrow":"Selected work","proj.title":"Projects & Systems","proj.sub":"A selection across AI healthcare, enterprise platforms, and mobile.",
-  "res.eyebrow":"Research","res.title":"Publications","res.badge":"Featured · Nature portfolio","res.more":"12+ peer-reviewed journal articles & international conference papers.",
-  "spk.eyebrow":"Speaking & impact","spk.title":"Trusted by leading organizations","spk.sub":"Invited speaker, trainer, and consultant for government agencies, universities, and enterprises.","spk.topics":"Training topics","spk.lead":"Community leadership",
+  "res.eyebrow":"Research","res.title":"Publications","res.badge":"Featured · Nature portfolio","res.more":"Full list below — peer-reviewed journals, international conferences, and national publications.",
+  "spk.eyebrow":"Speaking & impact","spk.title":"Trusted by leading organizations","spk.sub":"Invited speaker, trainer, and consultant for government agencies, universities, and enterprises.","spk.topics":"Training topics","spk.lead":"Community leadership","spk.team":"Training team & co-speakers",
   "ct.eyebrow":"Get in touch","ct.title":"Let's build something meaningful.","ct.sub":"Open to advisory roles, research collaboration, speaking, and consulting engagements.","ct.cv":"Full CV (PDF)",
-  "nav.gallery":"Work","gal.eyebrow":"Showcase","gal.title":"Work in pictures","gal.sub":"Real systems, field work, and deliverables — development, research, and SME consulting.","gal.all":"All","spk.docs":"Documented engagements",
+  "nav.gallery":"Work","gal.eyebrow":"Showcase","gal.title":"Work in pictures","gal.sub":"Real systems, field work, and deliverables — development, research, and SME consulting.","gal.all":"All","spk.docs":"Invitations from organizations",
   "edu.eyebrow":"Background","edu.title":"Education & Certifications","edu.degrees":"Education","edu.certs":"Certifications & Licenses",
   "foot.note":"Technology · Research · Business"
  },
  th:{
-  "nav.about":"เกี่ยวกับ","nav.expertise":"ความเชี่ยวชาญ","nav.experience":"ประสบการณ์","nav.projects":"ผลงาน","nav.research":"งานวิจัย","nav.contact":"ติดต่อ",
+  "nav.about":"เกี่ยวกับ","nav.expertise":"ความเชี่ยวชาญ","nav.experience":"ประสบการณ์","nav.education":"การศึกษา","nav.projects":"ผลงาน","nav.research":"งานวิจัย","nav.speaking":"วิทยากร","nav.contact":"ติดต่อ",
   "hero.kicker":"เปิดรับงานที่ปรึกษาและความร่วมมือ","hero.iam":"สวัสดีครับ ผมคือ","hero.justa":"ผมเป็นเพียง","hero.lead":"นักวิจัยระดับปริญญาเอกและผู้นำด้านเทคโนโลยีแบบ Full-Stack ที่เชื่อมโยง AI ขั้นสูง สถาปัตยกรรมซอฟต์แวร์ และกลยุทธ์ธุรกิจ — พัฒนาแพลตฟอร์มสาธารณสุขระดับประเทศให้ภาครัฐ และโซลูชันองค์กรให้ลูกค้าทั่วโลก","hero.cta1":"พูดคุยกัน","hero.cta2":"ดาวน์โหลด CV",
   "stat.years":"ปีในสายเทคโนโลยี","stat.pubs":"ผลงานวิจัยตีพิมพ์","stat.countries":"ประเทศที่ส่งมอบงาน (ไทย · สวิส · สหรัฐฯ)","stat.gov":"หน่วยงานภาครัฐที่ร่วมงาน",
   "about.eyebrow":"เกี่ยวกับ","about.title":"เชื่อมโค้ด งานวิจัย และธุรกิจ","about.p1":"ผม ถิรายุ มีฤกษ์สม — นักเทคโนโลยีที่มีพื้นฐานครบทั้งสามด้าน: เทคโนโลยีขั้นสูง (AI และ Full-Stack) งานวิจัยทางการแพทย์ (ปริญญาเอกเวชศาสตร์ปริวรรต) และกลยุทธ์ธุรกิจ (MBA) ตลอดกว่า 15 ปี ผมพัฒนาแพลตฟอร์ม AI สาธารณสุขระดับประเทศ ระบบองค์กร และแอปพลิเคชันมือถือ","about.p2":"ผมเป็นพันธมิตรกับบริษัทสุขภาพในสวิตเซอร์แลนด์มากว่าทศวรรษ ให้คำปรึกษา SME ในฐานะโค้ชที่ได้รับการรับรอง และเป็นวิทยากรให้หน่วยงานรัฐและมหาวิทยาลัยทั่วประเทศ",
@@ -421,9 +438,9 @@ const I18N = {
   "career.eyebrow":"เส้นทาง","career.title":"ประสบการณ์",
   "proj.eyebrow":"ผลงานคัดสรร","proj.title":"ผลงานและระบบ","proj.sub":"ตัวอย่างผลงานด้าน AI สาธารณสุข ระบบองค์กร และโมบาย",
   "res.eyebrow":"งานวิจัย","res.title":"ผลงานตีพิมพ์","res.badge":"ผลงานเด่น · เครือ Nature","res.more":"บทความวารสารและการประชุมวิชาการนานาชาติกว่า 12 ชิ้น",
-  "spk.eyebrow":"วิทยากรและผลกระทบ","spk.title":"ได้รับความไว้วางใจจากองค์กรชั้นนำ","spk.sub":"วิทยากร ผู้ฝึกอบรม และที่ปรึกษาให้หน่วยงานภาครัฐ มหาวิทยาลัย และองค์กรเอกชน","spk.topics":"หัวข้อบรรยาย","spk.lead":"บทบาทผู้นำในชุมชน",
+  "spk.eyebrow":"วิทยากรและผลกระทบ","spk.title":"ได้รับความไว้วางใจจากองค์กรชั้นนำ","spk.sub":"วิทยากร ผู้ฝึกอบรม และที่ปรึกษาให้หน่วยงานภาครัฐ มหาวิทยาลัย และองค์กรเอกชน","spk.topics":"หัวข้อบรรยาย","spk.lead":"บทบาทผู้นำในชุมชน","spk.team":"ทีมวิทยากรและผู้บรรยายร่วม",
   "ct.eyebrow":"ติดต่อ","ct.title":"มาสร้างสิ่งที่มีความหมายไปด้วยกัน","ct.sub":"ยินดีรับงานที่ปรึกษา ความร่วมมือด้านวิจัย การเป็นวิทยากร และงานให้คำปรึกษา","ct.cv":"CV ฉบับเต็ม (PDF)",
-  "nav.gallery":"ผลงาน","gal.eyebrow":"แกลเลอรี","gal.title":"ผลงานจากภาพจริง","gal.sub":"ภาพระบบงานจริง งานภาคสนาม และผลงานส่งมอบ — พัฒนาระบบ งานวิจัย และที่ปรึกษา SME","gal.all":"ทั้งหมด","spk.docs":"งานที่มีหลักฐานอ้างอิง",
+  "nav.gallery":"ผลงาน","gal.eyebrow":"แกลเลอรี","gal.title":"ผลงานจากภาพจริง","gal.sub":"ภาพระบบงานจริง งานภาคสนาม และผลงานส่งมอบ — พัฒนาระบบ งานวิจัย และที่ปรึกษา SME","gal.all":"ทั้งหมด","spk.docs":"งานที่ได้รับหนังสือเชิญจากหน่วยงาน",
   "edu.eyebrow":"ภูมิหลัง","edu.title":"การศึกษาและใบรับรอง","edu.degrees":"การศึกษา","edu.certs":"ใบรับรองและใบอนุญาต",
   "foot.note":"เทคโนโลยี · งานวิจัย · ธุรกิจ"
  }
@@ -489,18 +506,24 @@ const DATA={
  topics:{en:["AI & Computer Vision in practice","Deep Learning & NLP applications","Digital & social-media marketing","Mobile & web app development","OTOP product & e-commerce","Business Model Canvas & strategy","Metaverse for education","Smart tourism & geopark systems"],
    th:["AI และคอมพิวเตอร์วิทัศน์ในงานจริง","การประยุกต์ Deep Learning และ NLP","การตลาดดิจิทัลและสื่อสังคม","การพัฒนาแอปมือถือและเว็บ","ผลิตภัณฑ์ OTOP และอีคอมเมิร์ซ","Business Model Canvas และกลยุทธ์","เมตาเวิร์สเพื่อการศึกษา","ระบบท่องเที่ยวอัจฉริยะและจีโอพาร์ค"]},
  members:{en:[["🎮","Vice President","Korat Esports Sports Club, Nakhon Ratchasima"],["💻","Committee Member","Thai Programmer Association (TPA)"],["🤖","Member","AI Association of Thailand (AIAT)"]],
-   th:[["🎮","รองประธาน","สโมสรกีฬาอีสปอร์ตจังหวัดนครราชสีมา"],["💻","กรรมการ","สมาคมโปรแกรมเมอร์ไทย (TPA)"],["🤖","สมาชิก","สมาคมปัญญาประดิษฐ์ประเทศไทย (AIAT)"]]}
+   th:[["🎮","รองประธาน","สโมสรกีฬาอีสปอร์ตจังหวัดนครราชสีมา"],["💻","กรรมการ","สมาคมโปรแกรมเมอร์ไทย (TPA)"],["🤖","สมาชิก","สมาคมปัญญาประดิษฐ์ประเทศไทย (AIAT)"]]},
+ team:[
+   {photo:"assets/team/ekkachai.png",name:"Ekkachai Khlaimee",role:{en:"AI Engineer · AI Trainer · Business Development",th:"AI Engineer · วิทยากร AI · พัฒนาธุรกิจ"},link:"team/ekkachai.html"},
+   {photo:"assets/team/siripan.png",name:"Siripan Rajcharoensook",role:{en:"AI Trainer · Lecturer · Educational Leader",th:"วิทยากร AI · อาจารย์ · ผู้นำด้านการศึกษา"},link:"team/siripan.html"}
+ ]
 };
 
 // sync factual lists from the master Excel (portfolio/assets/data.js)
 if (window.CVDATA) {
   const cd = window.CVDATA;
-  ["timeline","projects","pubs","clients","topics","members","gallery","documents","education","certifications","skills"].forEach(k => { if (cd[k]) DATA[k] = cd[k]; });
+  ["timeline","projects","pubs","clients","topics","members","gallery","documents","education","certifications","skills","publications"].forEach(k => { if (cd[k]) DATA[k] = cd[k]; });
 }
 let lang = localStorage.getItem("lang") || "en";
 let theme = localStorage.getItem("theme") || "dark";
 const $ = s => document.querySelector(s);
 const el = (t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;};
+// split a skills string on , and ; but not inside parentheses
+function splitSkills(s){const out=[];let buf="",d=0;for(const ch of (s||"")){if(ch==="(")d++;else if(ch===")")d--;if((ch===","||ch===";")&&d<=0){if(buf.trim())out.push(buf.trim());buf="";}else buf+=ch;}if(buf.trim())out.push(buf.trim());return out;}
 
 function apply(){
   document.documentElement.lang = lang;
@@ -516,19 +539,33 @@ function render(){
   $("#facts").innerHTML = DATA.facts[lang].map(([k,v])=>`<div class="row"><span class="k">${k}</span><span class="v">${v}</span></div>`).join("");
   // expertise
   $("#expertise-cards").innerHTML = DATA.expertise[lang].map(([ic,h,p,tags])=>`<div class="card reveal"><div class="ic">${ic}</div><h3>${h}</h3><p>${p}</p><div class="tags">${tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div></div>`).join("");
-  if (DATA.skills) $("#stack").innerHTML = DATA.skills[lang].map(([g,it])=>`<div class="stackrow"><div class="sg">${g}</div><div class="si">${it}</div></div>`).join("");
+  if (DATA.skills) $("#stack").innerHTML = DATA.skills[lang].map(([g,it])=>`<div class="stackrow"><div class="sg">${g}</div><div class="sgchips">${splitSkills(it).map(t=>`<span class="sgchip">${t}</span>`).join("")}</div></div>`).join("");
   // timeline
   $("#timeline").innerHTML = DATA.timeline[lang].map(([w,h,o,p])=>`<div class="item"><div class="when">${w}</div><h3>${h}</h3><div class="org">${o}</div><p>${p}</p></div>`).join("");
   // projects
   $("#project-cards").innerHTML = DATA.projects[lang].map(([cat,h,p,tags])=>`<div class="card reveal"><div class="tag" style="display:inline-block;margin-bottom:12px">${cat}</div><h3>${h}</h3><p>${p}</p><div class="tags">${tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div></div>`).join("");
-  // pubs
-  $("#pub-list").innerHTML = DATA.pubs.map(s=>{const [t,y]=s.split("|");return `<div class="p"><span class="yr">${y}</span><span>${t}</span></div>`;}).join("");
+  // publications — full list grouped by type (featured paper excluded to avoid duplication)
+  if (DATA.publications) {
+    const FEAT = "s41598-026-43387";
+    const groups = [["Journal", lang==="th"?"วารสารวิชาการนานาชาติ":"International Journals"],
+                    ["Conference", lang==="th"?"การประชุมวิชาการ (นานาชาติ/ระดับชาติ)":"Conference Proceedings"],
+                    ["National", lang==="th"?"ผลงานระดับชาติ (ไทย)":"National Publications (Thai)"]];
+    let h="";
+    groups.forEach(([key,label])=>{
+      const g = DATA.publications.filter(p => p[0]===key && !((p[3]||"").includes(FEAT)));
+      if (!g.length) return;
+      h += `<div class="pubgh">${label} <span>(${g.length})</span></div>`;
+      h += g.map(p => `<div class="p"><span class="yr">${p[2]||""}</span><span>${p[1]}${p[3]?` &middot; <a href="${p[3]}" target="_blank" style="color:var(--accent)">DOI</a>`:""}</span></div>`).join("");
+    });
+    $("#pub-list").innerHTML = h;
+  }
   // clients
   $("#clients").innerHTML = DATA.clients.map(c=>`<div class="c">${c}</div>`).join("");
   // topics
   $("#topics").innerHTML = DATA.topics[lang].map(t=>`<li>${t}</li>`).join("");
   // members
   $("#member-cards").innerHTML = DATA.members[lang].map(([ic,h,o])=>`<div class="card"><div class="ic">${ic}</div><h3>${h}</h3><p>${o}</p></div>`).join("");
+  if (DATA.team) $("#team-cards").innerHTML = DATA.team.map(t=>`<a class="teamcard" href="${t.link}"><img src="${t.photo}" alt="${t.name}"><div><div class="tn">${t.name}</div><div class="tr">${t.role[lang]}</div></div><span class="arr">&#8594;</span></a>`).join("");
   const docs = DATA.documents || [], dh = document.getElementById("docs-h");
   $("#doclist").innerHTML = docs.map(d=>`<div class="docrow"><span class="dd">${d.date||""}</span><div><span class="do">${d.org||""}</span>${d.topic?" — <span class='dt'>"+d.topic+"</span>":""}</div></div>`).join("");
   if (dh) dh.style.display = docs.length ? "" : "none";

@@ -683,9 +683,10 @@ window.CVDATA = {
  },
  "pubs": [
   "Jenwithee T, Meererksom T, Limpanont Y, Sripa B, Laha T, Suwannatrai AT. (2026). Automated real-time surveillance of Bithynia snails using a comparative YOLO based approach for liver fluke host detection. Scientific Reports, 16, 14886.|2026",
-  "Kaewpitoon N, et al. (incl. Meererksom T). (2018). Detection of the carcinogenic liver fluke risk groups by verbal screening questionnaires using a mobile application. Asian Pacific Journal of Cancer Prevention.|2018",
-  "Kaewpitoon SJ, et al. (incl. Meererksom T). (2018). A carcinogenic human liver fluke infection among migrant workers in NE Thailand. Tropical Biomedicine, 35(2), 453–463.|2018",
-  "Kaewpitoon N, Kaewpitoon SJ, Meererksom T, et al. (2018). Detection of Opisthorchis viverrini infection among the ASEAN population in Thailand. Iranian Journal of Parasitology, 13(2), 258–266.|2018"
+  "Kaewpitoon N, et al. (incl. Meererksom T). (2026). Advancing Diagnostic Accuracy in Liver Cancer: A Systematic Review of Artificial Intelligence Applications. Asian Pacific Journal of Cancer Prevention, 27(1), 5–17.|2026",
+  "Meererksom T et al. (2026). Balancing innovation and interpretation: evaluating artificial intelligence in adenoma detection. Wiener Klinische Wochenschrift.|2026",
+  "Meererksom T et al. (2025). Beyond Accuracy: Advancing ML-Guided Diagnosis of Obstructive Jaundice Through Clinical Integration. Clinical and Translational Gastroenterology.|2025",
+  "Meererksom T et al. (2025). Toward Clinical Readiness: Critical Reflections on PATHOMIQ_PRAD and Artificial Intelligence Histology. JCO Clinical Cancer Informatics.|2025"
  ],
  "clients": [
   "Office of SMEs Promotion (OSMEP)",
@@ -795,7 +796,7 @@ window.CVDATA = {
   {
    "file": "assets/gallery/port-01.jpg",
    "thumb": "assets/gallery/thumb/port-01.jpg",
-   "category": "System Development",
+   "category": "AI & Healthcare",
    "title": {
     "en": "SUT-OVCCA: Liver-fluke/CCA self-risk screening tools\nand \nKunlóm: elderly-fall self-risk screening tools.",
     "th": "SUT-OVCCA: เครื่องมือคัดกรองความเสี่ยงพยาธิใบไม้ตับ-มะเร็งท่อน้ำดี\nและ\nKunlóm: เครื่องมือคัดกรองความเสี่ยงการหกล้มผู้สูงอายุ"
@@ -808,7 +809,7 @@ window.CVDATA = {
   {
    "file": "assets/gallery/port-02.jpg",
    "thumb": "assets/gallery/thumb/port-02.jpg",
-   "category": "System Development",
+   "category": "AI & Healthcare",
    "title": {
     "en": "AI-Helminths: Parasite-egg detection AI (OV, MIF, Cs, Ec, Al, Tt, Tspp) for DDC and NECTEC.",
     "th": "AI-Helminths: ระบบ AI ตรวจหาไข่พยาธิ ให้กรมควบคุมโรคและ NECTEC"
@@ -821,7 +822,7 @@ window.CVDATA = {
   {
    "file": "assets/gallery/port-03.jpg",
    "thumb": "assets/gallery/thumb/port-03.jpg",
-   "category": "System Development",
+   "category": "AI & Healthcare",
    "title": {
     "en": "AI-Helminths: Parasite-egg detection AI (OV, MIF, Cs, Ec, Al, Tt, Tspp) for DDC and NECTEC.",
     "th": "AI-Helminths: ระบบ AI ตรวจหาไข่พยาธิ ให้กรมควบคุมโรคและ NECTEC"
@@ -834,7 +835,7 @@ window.CVDATA = {
   {
    "file": "assets/gallery/port-04.jpg",
    "thumb": "assets/gallery/thumb/port-04.jpg",
-   "category": "System Development",
+   "category": "AI & Healthcare",
    "title": {
     "en": "MG-OV-CCA: OV-CCA risk-screening questionnaire (LINE LIFF)",
     "th": "MG-OV-CCA: แบบประเมินความเสี่ยง OV-CCA (LINE LIFF)"
@@ -847,7 +848,7 @@ window.CVDATA = {
   {
    "file": "assets/gallery/port-05.jpg",
    "thumb": "assets/gallery/thumb/port-05.jpg",
-   "category": "System Development",
+   "category": "AI & Healthcare",
    "title": {
     "en": "AI-Helminths: Parasite-egg detection AI (OV, MIF, Cs, Ec, Al, Tt, Tspp) for DDC and NECTEC.",
     "th": "AI-Helminths: ระบบ AI ตรวจหาไข่พยาธิ ให้กรมควบคุมโรคและ NECTEC"
@@ -860,7 +861,7 @@ window.CVDATA = {
   {
    "file": "assets/gallery/port-06.jpg",
    "thumb": "assets/gallery/thumb/port-06.jpg",
-   "category": "System Development",
+   "category": "AI & Healthcare",
    "title": {
     "en": "AI-Helminths: Parasite-egg detection AI (OV, MIF, Cs, Ec, Al, Tt, Tspp) for DDC and NECTEC.",
     "th": "AI-Helminths: ระบบ AI ตรวจหาไข่พยาธิ ให้กรมควบคุมโรคและ NECTEC"
@@ -873,7 +874,7 @@ window.CVDATA = {
   {
    "file": "assets/gallery/port-07.jpg",
    "thumb": "assets/gallery/thumb/port-07.jpg",
-   "category": "System Development",
+   "category": "AI & Healthcare",
    "title": {
     "en": "AI-Helminths: Parasite-egg detection AI (OV, MIF, Cs, Ec, Al, Tt, Tspp) for DDC and NECTEC.",
     "th": "AI-Helminths: ระบบ AI ตรวจหาไข่พยาธิ ให้กรมควบคุมโรคและ NECTEC"
@@ -886,7 +887,7 @@ window.CVDATA = {
   {
    "file": "assets/gallery/port-08.jpg",
    "thumb": "assets/gallery/thumb/port-08.jpg",
-   "category": "System Development",
+   "category": "AI & Healthcare",
    "title": {
     "en": "AI Malaria: Computer-vision diagnosis tools for DDC.\nAI-Helminths: Parasite-egg detection AI (OV, MIF, Cs, Ec, Al, Tt, Tspp) for DDC and NECTEC.",
     "th": "AI Malaria: เครื่องมือวินิจฉัยด้วยคอมพิวเตอร์วิทัศน์\nAI-Helminths: ระบบ AI ตรวจหาไข่พยาธิ ให้กรมควบคุมโรคและ NECTEC"
@@ -899,7 +900,7 @@ window.CVDATA = {
   {
    "file": "assets/gallery/port-11.jpg",
    "thumb": "assets/gallery/thumb/port-11.jpg",
-   "category": "System Development",
+   "category": "AI & Healthcare",
    "title": {
     "en": "3C & Long-Term Care: Web portal and GIS reporting system for the Dept. of Health.\nAnamai Chatbot: Rapid-response healthcare chatbot for the Dept. of Health.",
     "th": "3C & Long-Term Care: เว็บพอร์ทัลและระบบรายงาน GIS ให้กรมอนามัย\nAnamai Chatbot: แชตบอตสุขภาพให้กรมอนามัย"
@@ -912,7 +913,7 @@ window.CVDATA = {
   {
    "file": "assets/gallery/port-12.jpg",
    "thumb": "assets/gallery/thumb/port-12.jpg",
-   "category": "System Development",
+   "category": "AI & Healthcare",
    "title": {
     "en": "PEZZ growth-analysis system & clinical apps (GAS, Bedwetting)",
     "th": "ระบบวิเคราะห์การเจริญเติบโต PEZZ และแอปทางคลินิก"
@@ -925,7 +926,7 @@ window.CVDATA = {
   {
    "file": "assets/gallery/port-13.jpg",
    "thumb": "assets/gallery/thumb/port-13.jpg",
-   "category": "System Development",
+   "category": "AI & Healthcare",
    "title": {
     "en": "PEZZ growth-analysis system & clinical apps (GAS, Bedwetting)",
     "th": "ระบบวิเคราะห์การเจริญเติบโต PEZZ และแอปทางคลินิก"
@@ -977,7 +978,7 @@ window.CVDATA = {
   {
    "file": "assets/gallery/port-17.jpg",
    "thumb": "assets/gallery/thumb/port-17.jpg",
-   "category": "SME Consulting",
+   "category": "AI & Healthcare",
    "title": {
     "en": "AI microservices architecture — KONG API Gateway, Docker/NVIDIA (DDC, MoPH)",
     "th": "สถาปัตยกรรม AI ไมโครเซอร์วิส — KONG API Gateway, Docker/NVIDIA (กรมควบคุมโรค)"
@@ -2264,18 +2265,6 @@ window.CVDATA = {
  ],
  "documents": [
   {
-   "date": "17 Jan 2020",
-   "type": "Speaking",
-   "org": "Department of Health (กรมอนามัย, สำนักอนามัยผู้สูงอายุ)",
-   "topic": "Speaker — Long Term Care (3C)/Care Manager curriculum, Chiang Mai"
-  },
-  {
-   "date": "1 Apr 2025",
-   "type": "Speaking",
-   "org": "Nakhon Ratchasima Rajabhat University (Digital Media)",
-   "topic": "Speaker — job-hunting & digital-era skills"
-  },
-  {
    "date": "10 Sep 2025",
    "type": "Speaking",
    "org": "Vongchavalitkul University (Public Health)",
@@ -2288,10 +2277,22 @@ window.CVDATA = {
    "topic": "Trainer — E-Sport (Korat Esports VP)"
   },
   {
+   "date": "1 Apr 2025",
+   "type": "Speaking",
+   "org": "Nakhon Ratchasima Rajabhat University (Digital Media)",
+   "topic": "Speaker — job-hunting & digital-era skills"
+  },
+  {
    "date": "31 Jan 2020",
    "type": "Consulting/Expert",
    "org": "Department of Disease Control (กองโรคติดต่อทั่วไป)",
    "topic": "Helminth stool verification (Formalin-Ether) — Kasira House"
+  },
+  {
+   "date": "17 Jan 2020",
+   "type": "Speaking",
+   "org": "Department of Health (กรมอนามัย, สำนักอนามัยผู้สูงอายุ)",
+   "topic": "Speaker — Long Term Care (3C)/Care Manager curriculum, Chiang Mai"
   },
   {
    "date": "-",
@@ -2299,6 +2300,170 @@ window.CVDATA = {
    "org": "School board committee",
    "topic": "Invitation — school board (Children's Day)"
   }
+ ],
+ "publications": [
+  [
+   "Journal",
+   "Jenwithee T, Meererksom T, Limpanont Y, Sripa B, Laha T, Suwannatrai AT. (2026). Automated real-time surveillance of Bithynia snails using a comparative YOLO based approach for liver fluke host detection. Scientific Reports, 16, 14886.",
+   "2026",
+   "https://doi.org/10.1038/s41598-026-43387-x"
+  ],
+  [
+   "Journal",
+   "Kaewpitoon N, et al. (incl. Meererksom T). (2026). Advancing Diagnostic Accuracy in Liver Cancer: A Systematic Review of Artificial Intelligence Applications. Asian Pacific Journal of Cancer Prevention, 27(1), 5–17.",
+   "2026",
+   "https://doi.org/10.31557/APJCP.2026.27.1.5"
+  ],
+  [
+   "Journal",
+   "Meererksom T et al. (2026). Balancing innovation and interpretation: evaluating artificial intelligence in adenoma detection. Wiener Klinische Wochenschrift.",
+   "2026",
+   "https://doi.org/10.1007/s00508-025-02599-3"
+  ],
+  [
+   "Journal",
+   "Meererksom T et al. (2025). Beyond Accuracy: Advancing ML-Guided Diagnosis of Obstructive Jaundice Through Clinical Integration. Clinical and Translational Gastroenterology.",
+   "2025",
+   "https://doi.org/10.14309/ctg.0000000000000920"
+  ],
+  [
+   "Journal",
+   "Meererksom T et al. (2025). Toward Clinical Readiness: Critical Reflections on PATHOMIQ_PRAD and Artificial Intelligence Histology. JCO Clinical Cancer Informatics.",
+   "2025",
+   "https://doi.org/10.1200/CCI-25-00227"
+  ],
+  [
+   "Journal",
+   "Meererksom T et al. (2025). Rethinking Machine-Learning Metrics in Schistosomiasis Control: Toward Predictive Equity, Field Readiness, and Sustainable Deployment. American Journal of Tropical Medicine and Hygiene.",
+   "2025",
+   "https://doi.org/10.4269/ajtmh.25-0470a"
+  ],
+  [
+   "Journal",
+   "Bukkhunthod P, Meererksom T, et al. (2020). Animation as Supplementary Learning Material About Carcinogenic Liver Fluke in Classes for Primary Schoolchildren. Journal of Cancer Education, 35(1), 14–21.",
+   "2020",
+   "https://doi.org/10.1007/s13187-018-1434-5"
+  ],
+  [
+   "Journal",
+   "Kaewpitoon SJ, Ponphimai S, et al. (incl. Meererksom T). (2019). The prevalence of intestinal helminth infection in rural subdistricts of northeastern Thailand. Tropical Biomedicine, 36(1), 152–164.",
+   "2019",
+   ""
+  ],
+  [
+   "Journal",
+   "Kaewpitoon N, et al. (incl. Meererksom T). (2018). Detection of the carcinogenic liver fluke risk groups by verbal screening questionnaires using a mobile application. Asian Pacific Journal of Cancer Prevention.",
+   "2018",
+   "https://doi.org/10.22034/APJCP.2018.19.7.2013"
+  ],
+  [
+   "Journal",
+   "Kaewpitoon SJ, et al. (incl. Meererksom T). (2018). A carcinogenic human liver fluke infection among migrant workers in NE Thailand. Tropical Biomedicine, 35(2), 453–463.",
+   "2018",
+   ""
+  ],
+  [
+   "Journal",
+   "Kaewpitoon N, Kaewpitoon SJ, Meererksom T, et al. (2018). Detection of Opisthorchis viverrini Infection among the ASEAN Population in Thailand Using a Verbal Screening Test and Fecal Concentrator Kit. Iranian Journal of Parasitology, 13(2), 258–266.",
+   "2018",
+   ""
+  ],
+  [
+   "Journal",
+   "Kaewpitoon SJ, Sangwalee W, et al. (incl. Meererksom T). (2018). Active screening of gastrointestinal helminth infection in migrant workers in Thailand. Journal of International Medical Research.",
+   "2018",
+   "https://doi.org/10.1177/0300060518786911"
+  ],
+  [
+   "Journal",
+   "Kaewpitoon N, Meererksom T, et al. (2021). OVCCA Web Application as Supplementary Material to Facilitate Health Literacy Regarding Carcinogenic Liver Fluke. Asian Pacific Journal of Cancer Prevention, 22(9), 3045–3050.",
+   "2021",
+   "https://doi.org/10.31557/APJCP.2021.22.9.3045"
+  ],
+  [
+   "Conference",
+   "Meererksom T, Chan-aran S, Kaewpitoon SJ, Rujirakul R, Kaewpitoon N. (2016). SUT OVCCA Application: a high-potential tool for screening liver fluke and cholangiocarcinoma. 3rd Asian Symposium on Healthcare Without Borders, Fukuoka, Japan, pp. 90–96.",
+   "2016",
+   ""
+  ],
+  [
+   "Conference",
+   "Meererksom T. (2017). Health Application Development in Real-Life. 4th Asian Symposium on Healthcare Without Borders, Hiroshima, Japan, pp. 23–32.",
+   "2017",
+   ""
+  ],
+  [
+   "Conference",
+   "Meererksom T, Siripornmongkon W. (2018). Kunlóm: A self-risk assessment for falling among the elderly. 4th Conference on Public Health in Asia, Hiroshima, Japan.",
+   "2018",
+   ""
+  ],
+  [
+   "Conference",
+   "Kaewpitoon N, Meererksom T, et al. (2018). Effectiveness of the SUT-OVCCA mobile application for risk-group screening among rural populations. 5th International Congress on Infectious Diseases, Berlin, Germany.",
+   "2018",
+   ""
+  ],
+  [
+   "Conference",
+   "Kaewpitoon SJ, …, Meererksom T, et al. (2018). Prevention and control of carcinogenic liver fluke in rural communities through an inter-/trans-disciplinary university. 5th International Congress on Infectious Diseases, Berlin, Germany.",
+   "2018",
+   ""
+  ],
+  [
+   "Conference",
+   "Kaewpitoon SJ, …, Meererksom T. (2017). LaHanNa Project. 4th Engagement Thailand Annual Conference, Chulalongkorn University, Bangkok.",
+   "2017",
+   ""
+  ],
+  [
+   "Conference",
+   "Kaewpitoon N, Meererksom T, et al. (2017). A simple screening for liver-fluke risk group through a smartphone application. Annual Conference, Institute of Medicine, SUT.",
+   "2017",
+   ""
+  ],
+  [
+   "Conference",
+   "Meererksom T, Kaewpitoon SJ, Kaewpitoon N. (2016). SUT OVCCA iOS Application. National Conference, Institute of Medicine, SUT.",
+   "2016",
+   ""
+  ],
+  [
+   "National",
+   "ถิรายุ มีฤกษ์สม. (2555). การปฏิรูปการเรียนการสอนของคณะวิทยาการจัดการ มรภ.นครราชสีมา โดยใช้การจัดการความรู้: กรณีศึกษารายวิชาโครงสร้างข้อมูล.",
+   "2012",
+   ""
+  ],
+  [
+   "National",
+   "ถิรายุ มีฤกษ์สม. (2556). การศึกษาผลการจัดการเรียนรู้ด้วยเทคนิคการสอนแนะ รายวิชาสารสนเทศด้านการเงินและการธนาคาร.",
+   "2013",
+   ""
+  ],
+  [
+   "National",
+   "ถิรายุ มีฤกษ์สม. (2557). การพัฒนาผลสัมฤทธิ์ทางการเรียน วิชาระบบสารสนเทศเพื่องานธุรกิจ ด้วยทฤษฎีการสร้างองค์ความรู้.",
+   "2014",
+   ""
+  ],
+  [
+   "National",
+   "ถิรายุ มีฤกษ์สม. (2558). การจัดการเรียนรู้ด้วยปัญหาเป็นฐาน รายวิชาความมั่นคงของระบบสารสนเทศ.",
+   "2015",
+   ""
+  ],
+  [
+   "National",
+   "ถิรายุ มีฤกษ์สม. (2558). การประเมินความพึงพอใจของประชาชนต่อ อบต.หนองค่าย อ.ประทาย จ.นครราชสีมา.",
+   "2015",
+   ""
+  ],
+  [
+   "National",
+   "ถิรายุ มีฤกษ์สม. (2559). การประเมินความพึงพอใจของประชาชนต่อ อบต.วังไม้แดง อ.ประทาย จ.นครราชสีมา.",
+   "2016",
+   ""
+  ]
  ],
  "education": {
   "en": [
