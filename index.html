@@ -193,6 +193,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-siz
 @media(max-width:740px){.stackgrid{grid-template-columns:1fr}}
 .pubgh{color:var(--accent);font-weight:700;font-size:13px;letter-spacing:.04em;text-transform:uppercase;margin:18px 0 8px}
 .pubgh span{color:var(--mut);font-weight:600}
+.ptype{display:inline-block;background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent);font-size:11px;font-weight:700;padding:2px 8px;border-radius:6px;margin-right:6px;vertical-align:middle}
 .teamcard{display:flex;gap:16px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;transition:.25s}
 .teamcard:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
 .teamcard img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex:0 0 auto}
@@ -332,6 +333,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-siz
     <h2 class="sec reveal" data-i18n="proj.title"></h2>
     <p class="lead reveal" style="margin-top:14px" data-i18n="proj.sub"></p>
     <div class="grid cards3" id="project-cards" style="margin-top:36px"></div>
+    <div class="gpager" id="project-pager"></div>
   </div>
 </section>
 
@@ -358,7 +360,8 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-siz
       <div class="meta">Jenwithee T, <b>Meererksom T</b>, Limpanont Y, Sripa B, Laha T, Suwannatrai AT. — <i>Scientific Reports</i> (Nature), 2026; 16:14886.</div>
       <div style="margin-top:16px"><a class="btn sm" href="https://doi.org/10.1038/s41598-026-43387-x" target="_blank">DOI → 10.1038/s41598-026-43387-x</a></div>
     </div>
-    <div class="pub-list reveal" id="pub-list"></div>
+    <div class="pub-list" id="pub-list"></div>
+    <div class="gpager" id="pub-pager"></div>
     <p class="lead reveal" style="margin-top:18px;font-size:14px">ORCID <a style="color:var(--accent)" href="https://orcid.org/0000-0001-6414-3607" target="_blank">0000-0001-6414-3607</a> · <span data-i18n="res.more"></span></p>
   </div>
 </section>
@@ -540,34 +543,20 @@ function render(){
   // facts
   $("#facts").innerHTML = DATA.facts[lang].map(([k,v])=>`<div class="row"><span class="k">${k}</span><span class="v">${v}</span></div>`).join("");
   // expertise
-  $("#expertise-cards").innerHTML = DATA.expertise[lang].map(([ic,h,p,tags])=>`<div class="card reveal"><div class="ic">${ic}</div><h3>${h}</h3><p>${p}</p><div class="tags">${tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div></div>`).join("");
+  $("#expertise-cards").innerHTML = DATA.expertise[lang].map(([ic,h,p])=>`<div class="card reveal"><div class="ic">${ic}</div><h3>${h}</h3><p>${p}</p></div>`).join("");
   if (DATA.skills) $("#stack").innerHTML = DATA.skills[lang].map(([g,it])=>`<div class="stackrow"><div class="sg">${g}</div><div class="sgchips">${splitSkills(it).map(t=>`<span class="sgchip">${t}</span>`).join("")}</div></div>`).join("");
   // timeline
   $("#timeline").innerHTML = DATA.timeline[lang].map(([w,h,o,p])=>`<div class="item"><div class="when">${w}</div><h3>${h}</h3><div class="org">${o}</div><p>${p}</p></div>`).join("");
   // projects
-  $("#project-cards").innerHTML = DATA.projects[lang].map(([cat,h,p,tags])=>`<div class="card reveal"><div class="tag" style="display:inline-block;margin-bottom:12px">${cat}</div><h3>${h}</h3><p>${p}</p><div class="tags">${tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div></div>`).join("");
-  // publications — full list grouped by type (featured paper excluded to avoid duplication)
-  if (DATA.publications) {
-    const FEAT = "s41598-026-43387";
-    const groups = [["Journal", lang==="th"?"วารสารวิชาการนานาชาติ":"International Journals"],
-                    ["Conference", lang==="th"?"การประชุมวิชาการ (นานาชาติ/ระดับชาติ)":"Conference Proceedings"],
-                    ["National", lang==="th"?"ผลงานระดับชาติ (ไทย)":"National Publications (Thai)"]];
-    let h="";
-    groups.forEach(([key,label])=>{
-      const g = DATA.publications.filter(p => p[0]===key && !((p[3]||"").includes(FEAT)));
-      if (!g.length) return;
-      h += `<div class="pubgh">${label} <span>(${g.length})</span></div>`;
-      h += g.map(p => `<div class="p"><span class="yr">${p[2]||""}</span><span>${p[1]}${p[3]?` &middot; <a href="${p[3]}" target="_blank" style="color:var(--accent)">DOI</a>`:""}</span></div>`).join("");
-    });
-    $("#pub-list").innerHTML = h;
-  }
+  renderProjects();
+  renderPubs();
   // clients
   $("#clients").innerHTML = DATA.clients.map(c=>`<div class="c">${c}</div>`).join("");
   // topics
   $("#topics").innerHTML = DATA.topics[lang].map(t=>`<li>${t}</li>`).join("");
   // members
   $("#member-cards").innerHTML = DATA.members[lang].map(([ic,h,o])=>`<div class="card"><div class="ic">${ic}</div><h3>${h}</h3><p>${o}</p></div>`).join("");
-  if (DATA.team) $("#team-cards").innerHTML = DATA.team.map(t=>`<a class="teamcard" href="${t.link}"><img src="${t.photo}" alt="${t.name}"><div><div class="tn">${t.name}</div><div class="tr">${t.role[lang]}</div></div><span class="arr">&#8594;</span></a>`).join("");
+  if (DATA.team) $("#team-cards").innerHTML = DATA.team.map(t=>{const nm=(t.name&&t.name[lang])||t.name; return `<a class="teamcard" href="${t.link}"><img src="${t.photo}" alt="${nm}"><div><div class="tn">${nm}</div><div class="tr">${t.role[lang]}</div></div><span class="arr">&#8594;</span></a>`;}).join("");
   const docs = DATA.documents || [], dh = document.getElementById("docs-h");
   $("#doclist").innerHTML = docs.map(d=>`<div class="docrow"><span class="dd">${d.date||""}</span><div><span class="do">${d.org||""}</span>${d.topic?" — <span class='dt'>"+d.topic+"</span>":""}</div></div>`).join("");
   if (dh) dh.style.display = docs.length ? "" : "none";
@@ -613,6 +602,38 @@ function renderGrid(){
 function galGo(p){ const pages=galPageCount(); galPage=((p%pages)+pages)%pages; renderGrid(); }
 function galAuto(){ clearInterval(galTimer); if(galPageCount()>1) galTimer=setInterval(()=>galGo(galPage+1), 5000); }
 function openLight(i){ const g=(DATA.gallery||[])[i]; if(!g)return; clearInterval(galTimer); $("#lightImg").src=g.file; $("#lightCap").textContent=gcap(g); $("#lightbox").classList.add("open"); }
+// ---- shared pager (projects + publications), gallery-style ----
+const PROJ_PER=9, PUB_PER=5, FEATDOI="s41598-026-43387";
+let projPage=0, projTimer=null, pubPage=0, pubTimer=null;
+function pagerControls(el,page,pages,goFn){
+  if(!el)return;
+  if(pages<=1){el.innerHTML="";return;}
+  const dots=Array.from({length:pages},(_,i)=>`<span class="gdot ${i===page?'on':''}" data-p="${i}"></span>`).join("");
+  el.innerHTML=`<button class="garr" data-d="-1" aria-label="prev">&#8249;</button><div class="gdots">${dots}</div><button class="garr" data-d="1" aria-label="next">&#8250;</button><span class="gcount">${page+1} / ${pages}</span>`;
+  el.querySelector('[data-d="-1"]').onclick=()=>goFn(page-1);
+  el.querySelector('[data-d="1"]').onclick=()=>goFn(page+1);
+  el.querySelectorAll(".gdot").forEach(d=>d.onclick=()=>goFn(+d.dataset.p));
+}
+function projItems(){ return (DATA.projects&&DATA.projects[lang])||[]; }
+function projResume(){ clearInterval(projTimer); if(Math.ceil(projItems().length/PROJ_PER)>1) projTimer=setInterval(()=>projGo(projPage+1),7000); }
+function renderProjects(){
+  const items=projItems(), pages=Math.max(1,Math.ceil(items.length/PROJ_PER));
+  if(projPage>=pages)projPage=0;
+  $("#project-cards").innerHTML=items.slice(projPage*PROJ_PER,projPage*PROJ_PER+PROJ_PER).map(([cat,h,p,tags])=>`<div class="card"><div class="tag" style="display:inline-block;margin-bottom:12px">${cat}</div><h3>${h}</h3><p>${p}</p><div class="tags">${tags.map(t=>`<span class="tag">${t}</span>`).join("")}</div></div>`).join("");
+  pagerControls($("#project-pager"),projPage,pages,projGo); projResume();
+}
+function projGo(p){const pages=Math.max(1,Math.ceil(projItems().length/PROJ_PER));projPage=((p%pages)+pages)%pages;renderProjects();}
+function pubItems(){ return (DATA.publications||[]).filter(p=>!((p[3]||"").includes(FEATDOI))); }
+function pubResume(){ clearInterval(pubTimer); if(Math.ceil(pubItems().length/PUB_PER)>1) pubTimer=setInterval(()=>pubGo(pubPage+1),8000); }
+function renderPubs(){
+  if(!DATA.publications)return;
+  const items=pubItems(), pages=Math.max(1,Math.ceil(items.length/PUB_PER));
+  if(pubPage>=pages)pubPage=0;
+  const TL={Journal:lang==="th"?"วารสาร":"Journal",Conference:lang==="th"?"ประชุมวิชาการ":"Conference",National:lang==="th"?"ระดับชาติ":"National"};
+  $("#pub-list").innerHTML=items.slice(pubPage*PUB_PER,pubPage*PUB_PER+PUB_PER).map(p=>`<div class="p"><span class="yr">${p[2]||""}</span><span><span class="ptype">${TL[p[0]]||p[0]}</span>${p[1]}${p[3]?` &middot; <a href="${p[3]}" target="_blank" style="color:var(--accent)">DOI</a>`:""}</span></div>`).join("");
+  pagerControls($("#pub-pager"),pubPage,pages,pubGo); pubResume();
+}
+function pubGo(p){const pages=Math.max(1,Math.ceil(pubItems().length/PUB_PER));pubPage=((p%pages)+pages)%pages;renderPubs();}
 // rotor
 let ri=0;
 function rotor(){
@@ -635,7 +656,9 @@ function closeLight(){ $("#lightbox").classList.remove("open"); galAuto(); }
 $("#lightClose").onclick=closeLight;
 $("#lightbox").onclick=e=>{if(e.target.id==="lightbox")closeLight();};
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeLight();});
-(function(){const gs=document.getElementById("gallery"); if(gs){ gs.addEventListener("mouseenter",()=>clearInterval(galTimer)); gs.addEventListener("mouseleave",()=>galAuto()); }})();
+(function(){const gs=document.getElementById("gallery"); if(gs){ gs.addEventListener("mouseenter",()=>clearInterval(galTimer)); gs.addEventListener("mouseleave",()=>galAuto()); }
+ const ps=document.getElementById("projects"); if(ps){ ps.addEventListener("mouseenter",()=>clearInterval(projTimer)); ps.addEventListener("mouseleave",()=>projResume()); }
+ const rs=document.getElementById("research"); if(rs){ rs.addEventListener("mouseenter",()=>clearInterval(pubTimer)); rs.addEventListener("mouseleave",()=>pubResume()); }})();
 window.addEventListener("scroll",()=>$("#hdr").classList.toggle("scrolled",scrollY>20));
 $("#yr").textContent=new Date().getFullYear();
 apply(); rotor(); setInterval(rotor,2600);

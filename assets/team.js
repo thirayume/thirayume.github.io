@@ -1,7 +1,10 @@
 window.CVTEAM = [
  {
   "photo": "assets/team/ekkachai.png",
-  "name": "Ekkachai Khlaimee",
+  "name": {
+   "en": "Ekkachai Khlaimee",
+   "th": "เอกชัย คล้ายมี"
+  },
   "role": {
    "en": "AI Engineer · AI Trainer · Business Development Leader",
    "th": "AI Engineer · วิทยากร AI · ผู้นำด้านพัฒนาธุรกิจ"
@@ -10,7 +13,10 @@ window.CVTEAM = [
  },
  {
   "photo": "assets/team/siripan.png",
-  "name": "Siripan Rajcharoensook",
+  "name": {
+   "en": "Siripan Rajcharoensook",
+   "th": "สิริพรรณ ราษฎร์เจริญสุข"
+  },
   "role": {
    "en": "AI Trainer · Lecturer · Educational Leader",
    "th": "วิทยากร AI · อาจารย์ · ผู้นำด้านการศึกษา"
