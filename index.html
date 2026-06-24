@@ -61,7 +61,7 @@ header.scrolled{border-bottom:1px solid var(--line);background:color-mix(in srgb
 nav{display:flex;align-items:center;justify-content:space-between;height:68px}
 .brand{font-family:var(--disp);font-weight:800;font-size:19px;letter-spacing:-.3px;display:flex;align-items:center;gap:2px}
 .brand .em{color:var(--accent)}
-.navlinks{display:flex;gap:30px;align-items:center}
+.navlinks{display:flex;gap:19px;align-items:center}
 .navlinks a{color:var(--soft);font-size:14.5px;font-weight:500;transition:.2s}
 .navlinks a:hover{color:var(--ink)}
 .tools{display:flex;gap:10px;align-items:center}
@@ -175,6 +175,12 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-siz
 .docrow .dd{color:var(--accent);font-weight:700;font-size:13px}
 .docrow .do{font-weight:600}.docrow .dt{color:var(--soft)}
 @media(max-width:560px){.docrow{grid-template-columns:1fr}}
+.crow{padding:14px 0;border-bottom:1px solid var(--line)}
+.crh{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
+.crr{font-weight:700;font-size:15.5px}
+.crp{color:var(--accent);font-weight:700;font-size:12.5px;white-space:nowrap}
+.crc{color:var(--accent);font-weight:600;font-size:13.5px;margin-top:2px}
+.crt{color:var(--soft);font-size:13.5px;margin-top:3px}
 .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:30px}
 .eduh{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:12px}
 .eduitem{padding:12px 0;border-bottom:1px solid var(--line)}
@@ -225,6 +231,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-siz
       <a href="#about" data-i18n="nav.about"></a>
       <a href="#expertise" data-i18n="nav.expertise"></a>
       <a href="#experience" data-i18n="nav.experience"></a>
+      <a href="#consulting" data-i18n="nav.consulting"></a>
       <a href="#education" data-i18n="nav.education"></a>
       <a href="#projects" data-i18n="nav.projects"></a>
       <a href="#gallery" data-i18n="nav.gallery"></a>
@@ -269,12 +276,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-siz
 <!-- STATS -->
 <section style="padding-top:0">
   <div class="wrap">
-    <div class="stats reveal">
-      <div class="stat"><div class="n">15+</div><div class="l" data-i18n="stat.years"></div></div>
-      <div class="stat"><div class="n">12+</div><div class="l" data-i18n="stat.pubs"></div></div>
-      <div class="stat"><div class="n">3</div><div class="l" data-i18n="stat.countries"></div></div>
-      <div class="stat"><div class="n">8+</div><div class="l" data-i18n="stat.gov"></div></div>
-    </div>
+    <div class="stats reveal" id="stats-row"></div>
   </div>
 </section>
 
@@ -311,6 +313,15 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-siz
     <div class="eyebrow reveal" data-i18n="career.eyebrow"></div>
     <h2 class="sec reveal" data-i18n="career.title"></h2>
     <div class="tl reveal" id="timeline" style="margin-top:34px"></div>
+  </div>
+</section>
+
+<!-- CONSULTING & ADVISORY -->
+<section id="consulting" style="background:var(--bg2)">
+  <div class="wrap">
+    <div class="eyebrow reveal" data-i18n="con.eyebrow"></div>
+    <h2 class="sec reveal" data-i18n="con.title"></h2>
+    <div class="reveal" id="consulting-list" style="margin-top:24px"></div>
   </div>
 </section>
 
@@ -356,9 +367,8 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-siz
     <h2 class="sec reveal" data-i18n="res.title"></h2>
     <div class="pub-feature reveal" style="margin-top:28px">
       <span class="badge" data-i18n="res.badge"></span>
-      <h3>Automated real-time surveillance of <em>Bithynia</em> snails using a comparative YOLO-based approach for liver fluke host detection</h3>
-      <div class="meta">Jenwithee T, <b>Meererksom T</b>, Limpanont Y, Sripa B, Laha T, Suwannatrai AT. — <i>Scientific Reports</i> (Nature), 2026; 16:14886.</div>
-      <div style="margin-top:16px"><a class="btn sm" href="https://doi.org/10.1038/s41598-026-43387-x" target="_blank">DOI → 10.1038/s41598-026-43387-x</a></div>
+      <div id="feat-cite" style="font-size:17px;font-weight:700;line-height:1.45;color:var(--ink)"></div>
+      <div id="feat-doi" style="margin-top:16px"></div>
     </div>
     <div class="pub-list" id="pub-list"></div>
     <div class="gpager" id="pub-pager"></div>
@@ -373,6 +383,8 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-siz
     <h2 class="sec reveal" data-i18n="spk.title"></h2>
     <p class="lead reveal" style="margin-top:14px" data-i18n="spk.sub"></p>
     <div class="chips reveal" id="clients" style="margin-top:22px"></div>
+    <h3 class="reveal" style="margin:34px 0 12px;font-size:17px;font-weight:700" data-i18n="spk.engagements"></h3>
+    <div class="reveal" id="speaking-list"></div>
     <h3 style="margin:34px 0 4px;font-size:17px;font-weight:700" data-i18n="spk.topics"></h3>
     <ul class="topiclist reveal" id="topics"></ul>
     <div style="margin-top:30px" class="reveal">
@@ -424,7 +436,7 @@ const I18N = {
   "stat.years":"Years in technology","stat.pubs":"Research publications","stat.countries":"Countries delivered (TH · CH · US)","stat.gov":"Government agencies served",
   "about.eyebrow":"About","about.title":"Bridging code, research & business.","about.p1":"I'm Thirayu Meererksom — a technologist with a rare triple background: advanced technology (AI & full-stack), medical research (Ph.D. in Translational Medicine), and business strategy (MBA). Over 15+ years I've shipped national-scale AI healthcare platforms, enterprise systems, and mobile products.","about.p2":"I've partnered with a Swiss healthcare firm for over a decade, advised SMEs as a certified coach, and trained thousands across Thai government agencies and universities — translating deep technical work into real-world impact.",
   "exp.eyebrow":"What I do","exp.title":"Expertise","exp.sub":"From research models to production systems and the strategy that ties them together.","exp.stack":"Full tech stack",
-  "career.eyebrow":"Journey","career.title":"Experience",
+  "career.eyebrow":"Journey","career.title":"Experience","con.eyebrow":"Advisory","con.title":"Consulting & Advisory","nav.consulting":"Consulting","spk.engagements":"Invited speaking & training",
   "proj.eyebrow":"Selected work","proj.title":"Projects & Systems","proj.sub":"A selection across AI healthcare, enterprise platforms, and mobile.",
   "res.eyebrow":"Research","res.title":"Publications","res.badge":"Featured · Nature portfolio","res.more":"Full list below — peer-reviewed journals, international conferences, and national publications.",
   "spk.eyebrow":"Speaking & impact","spk.title":"Trusted by leading organizations","spk.sub":"Invited speaker, trainer, and consultant for government agencies, universities, and enterprises.","spk.topics":"Training topics","spk.lead":"Community leadership","spk.team":"Training team & co-speakers",
@@ -439,7 +451,7 @@ const I18N = {
   "stat.years":"ปีในสายเทคโนโลยี","stat.pubs":"ผลงานวิจัยตีพิมพ์","stat.countries":"ประเทศที่ส่งมอบงาน (ไทย · สวิส · สหรัฐฯ)","stat.gov":"หน่วยงานภาครัฐที่ร่วมงาน",
   "about.eyebrow":"เกี่ยวกับ","about.title":"เชื่อมโค้ด งานวิจัย และธุรกิจ","about.p1":"ผม ถิรายุ มีฤกษ์สม — นักเทคโนโลยีที่มีพื้นฐานครบทั้งสามด้าน: เทคโนโลยีขั้นสูง (AI และ Full-Stack) งานวิจัยทางการแพทย์ (ปริญญาเอกเวชศาสตร์ปริวรรต) และกลยุทธ์ธุรกิจ (MBA) ตลอดกว่า 15 ปี ผมพัฒนาแพลตฟอร์ม AI สาธารณสุขระดับประเทศ ระบบองค์กร และแอปพลิเคชันมือถือ","about.p2":"ผมเป็นพันธมิตรกับบริษัทสุขภาพในสวิตเซอร์แลนด์มากว่าทศวรรษ ให้คำปรึกษา SME ในฐานะโค้ชที่ได้รับการรับรอง และเป็นวิทยากรให้หน่วยงานรัฐและมหาวิทยาลัยทั่วประเทศ",
   "exp.eyebrow":"สิ่งที่ผมทำ","exp.title":"ความเชี่ยวชาญ","exp.sub":"ตั้งแต่โมเดลงานวิจัย สู่ระบบใช้งานจริง และกลยุทธ์ที่เชื่อมทุกอย่างเข้าด้วยกัน","exp.stack":"เทคโนโลยีที่ใช้ทั้งหมด",
-  "career.eyebrow":"เส้นทาง","career.title":"ประสบการณ์",
+  "career.eyebrow":"เส้นทาง","career.title":"ประสบการณ์","con.eyebrow":"ที่ปรึกษา","con.title":"งานที่ปรึกษาและให้คำแนะนำ","nav.consulting":"ที่ปรึกษา","spk.engagements":"งานวิทยากรและฝึกอบรม",
   "proj.eyebrow":"ผลงานคัดสรร","proj.title":"ผลงานและระบบ","proj.sub":"ตัวอย่างผลงานด้าน AI สาธารณสุข ระบบองค์กร และโมบาย",
   "res.eyebrow":"งานวิจัย","res.title":"ผลงานตีพิมพ์","res.badge":"ผลงานเด่น · เครือ Nature","res.more":"บทความวารสารและการประชุมวิชาการนานาชาติกว่า 12 ชิ้น",
   "spk.eyebrow":"วิทยากรและผลกระทบ","spk.title":"ได้รับความไว้วางใจจากองค์กรชั้นนำ","spk.sub":"วิทยากร ผู้ฝึกอบรม และที่ปรึกษาให้หน่วยงานภาครัฐ มหาวิทยาลัย และองค์กรเอกชน","spk.topics":"หัวข้อบรรยาย","spk.lead":"บทบาทผู้นำในชุมชน","spk.team":"ทีมวิทยากรและผู้บรรยายร่วม",
@@ -520,7 +532,13 @@ const DATA={
 // sync factual lists from the master Excel (portfolio/assets/data.js)
 if (window.CVDATA) {
   const cd = window.CVDATA;
-  ["timeline","projects","pubs","clients","topics","members","gallery","documents","education","certifications","skills","publications"].forEach(k => { if (cd[k]) DATA[k] = cd[k]; });
+  ["timeline","projects","pubs","clients","topics","members","gallery","documents","education","certifications","skills","publications","facts","expertise","stats","consulting","speaking"].forEach(k => { if (cd[k]) DATA[k] = cd[k]; });
+  if (cd.featured_pub) DATA.featured_pub = cd.featured_pub;
+  if (cd.site) {
+    DATA.rotor = cd.site.rotor || DATA.rotor;
+    const S = cd.site, M = {"hero.kicker":S.hero_kicker,"hero.iam":S.hero_iam,"hero.justa":S.hero_justa,"hero.lead":S.hero_lead,"hero.cta1":S.cta_talk,"hero.cta2":S.cta_cv,"about.title":S.about_title,"about.p1":S.about_p1,"about.p2":S.about_p2,"ct.title":S.contact_title,"ct.sub":S.contact_sub};
+    ["en","th"].forEach(lg=>{ for(const k in M){ if(M[k] && M[k][lg]) I18N[lg][k]=M[k][lg]; } });
+  }
 }
 if (window.CVTEAM) DATA.team = window.CVTEAM;   // co-workers generated from co-workers/*.xlsx
 let lang = localStorage.getItem("lang") || "en";
@@ -541,6 +559,7 @@ function apply(){
 }
 function render(){
   // facts
+  if (DATA.stats) $("#stats-row").innerHTML = DATA.stats[lang].map(([n,l])=>`<div class="stat"><div class="n">${n}</div><div class="l">${l}</div></div>`).join("");
   $("#facts").innerHTML = DATA.facts[lang].map(([k,v])=>`<div class="row"><span class="k">${k}</span><span class="v">${v}</span></div>`).join("");
   // expertise
   $("#expertise-cards").innerHTML = DATA.expertise[lang].map(([ic,h,p])=>`<div class="card reveal"><div class="ic">${ic}</div><h3>${h}</h3><p>${p}</p></div>`).join("");
@@ -562,6 +581,8 @@ function render(){
   if (dh) dh.style.display = docs.length ? "" : "none";
   if (DATA.education) $("#edu-list").innerHTML = DATA.education[lang].map(([t,o,y])=>`<div class="eduitem"><div class="ed-y">${y}</div><div class="ed-t">${t}</div><div class="ed-o">${o}</div></div>`).join("");
   if (DATA.certifications) $("#cert-list").innerHTML = DATA.certifications[lang].map(c=>`<span class="cc">${c}</span>`).join("");
+  if (DATA.consulting) $("#consulting-list").innerHTML = DATA.consulting[lang].map(([role,client,topic,period])=>`<div class="crow"><div class="crh"><span class="crr">${role}</span><span class="crp">${period||""}</span></div><div class="crc">${client}</div>${topic?`<div class="crt">${topic}</div>`:""}</div>`).join("");
+  if (DATA.speaking) $("#speaking-list").innerHTML = DATA.speaking[lang].map(([date,org,topic])=>`<div class="docrow"><span class="dd">${date||"—"}</span><div><span class="do">${org}</span>${topic?` — <span class="dt">${topic}</span>`:""}</div></div>`).join("");
   setupGallery();
   observe();
 }
@@ -626,6 +647,7 @@ function projGo(p){const pages=Math.max(1,Math.ceil(projItems().length/PROJ_PER)
 function pubItems(){ return (DATA.publications||[]).filter(p=>!((p[3]||"").includes(FEATDOI))); }
 function pubResume(){ clearInterval(pubTimer); if(Math.ceil(pubItems().length/PUB_PER)>1) pubTimer=setInterval(()=>pubGo(pubPage+1),8000); }
 function renderPubs(){
+  if(DATA.featured_pub){const fp=DATA.featured_pub; const fc=$("#feat-cite"), fd=$("#feat-doi"); if(fc)fc.innerHTML=fp[1]; if(fd)fd.innerHTML=fp[3]?`<a class="btn sm" href="${fp[3]}" target="_blank">DOI &rarr; ${fp[3].replace("https://doi.org/","")}</a>`:"";}
   if(!DATA.publications)return;
   const items=pubItems(), pages=Math.max(1,Math.ceil(items.length/PUB_PER));
   if(pubPage>=pages)pubPage=0;

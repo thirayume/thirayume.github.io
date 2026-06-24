@@ -2585,6 +2585,584 @@ window.CVDATA = {
    ]
   ]
  },
+ "site": {
+  "hero_kicker": {
+   "en": "Available for advisory & collaboration",
+   "th": "เปิดรับงานที่ปรึกษาและความร่วมมือ"
+  },
+  "hero_iam": {
+   "en": "Hi, I'm",
+   "th": "สวัสดีครับ ผมคือ"
+  },
+  "hero_justa": {
+   "en": "I am just a",
+   "th": "ผมเป็นเพียง"
+  },
+  "rotor": {
+   "en": [
+    "Full-Stack Developer",
+    "DevOps / DevSecOps Engineer",
+    "Tech Consultant",
+    "Business Consultant",
+    "System & Platform Architect",
+    "CTO",
+    "AI Researcher"
+   ],
+   "th": [
+    "นักพัฒนา Full-Stack",
+    "วิศวกร DevOps / DevSecOps",
+    "ที่ปรึกษาเทคโนโลยี",
+    "ที่ปรึกษาธุรกิจ",
+    "สถาปนิกระบบและแพลตฟอร์ม",
+    "CTO",
+    "นักวิจัยปัญญาประดิษฐ์"
+   ]
+  },
+  "hero_lead": {
+   "en": "Ph.D. researcher and full-stack technology leader bridging advanced AI, software architecture, and business strategy — delivering national-scale healthcare platforms for government and enterprise solutions for clients worldwide.",
+   "th": "นักวิจัยระดับปริญญาเอกและผู้นำด้านเทคโนโลยีแบบ Full-Stack ที่เชื่อมโยง AI ขั้นสูง สถาปัตยกรรมซอฟต์แวร์ และกลยุทธ์ธุรกิจ — พัฒนาแพลตฟอร์มสาธารณสุขระดับประเทศให้ภาครัฐ และโซลูชันองค์กรให้ลูกค้าทั่วโลก"
+  },
+  "cta_talk": {
+   "en": "Let's talk",
+   "th": "พูดคุยกัน"
+  },
+  "cta_cv": {
+   "en": "Download CV",
+   "th": "ดาวน์โหลด CV"
+  },
+  "about_title": {
+   "en": "Bridging code, research & business.",
+   "th": "เชื่อมโค้ด งานวิจัย และธุรกิจ"
+  },
+  "about_p1": {
+   "en": "I'm Thirayu Meererksom — a technologist with a rare triple background: advanced technology (AI & full-stack), medical research (Ph.D. in Translational Medicine), and business strategy (MBA). Over 15+ years I've shipped national-scale AI healthcare platforms, enterprise systems, and mobile products.",
+   "th": "ผม ถิรายุ มีฤกษ์สม — นักเทคโนโลยีที่มีพื้นฐานครบทั้งสามด้าน: เทคโนโลยีขั้นสูง (AI และ Full-Stack) งานวิจัยทางการแพทย์ (ปริญญาเอกเวชศาสตร์ปริวรรต) และกลยุทธ์ธุรกิจ (MBA) ตลอดกว่า 15 ปี ผมพัฒนาแพลตฟอร์ม AI สาธารณสุขระดับประเทศ ระบบองค์กร และแอปพลิเคชันมือถือ"
+  },
+  "about_p2": {
+   "en": "I've partnered with a Swiss healthcare firm for over a decade, advised SMEs as a certified coach, and trained thousands across Thai government agencies and universities — translating deep technical work into real-world impact.",
+   "th": "ผมเป็นพันธมิตรกับบริษัทสุขภาพในสวิตเซอร์แลนด์มากว่าทศวรรษ ให้คำปรึกษา SME ในฐานะโค้ชที่ได้รับการรับรอง และเป็นวิทยากรให้หน่วยงานรัฐและมหาวิทยาลัยทั่วประเทศ"
+  },
+  "contact_title": {
+   "en": "Let's build something meaningful.",
+   "th": "มาสร้างสิ่งที่มีความหมายไปด้วยกัน"
+  },
+  "contact_sub": {
+   "en": "Open to advisory roles, research collaboration, speaking, and consulting engagements.",
+   "th": "ยินดีรับงานที่ปรึกษา ความร่วมมือด้านวิจัย การเป็นวิทยากร และงานให้คำปรึกษา"
+  },
+  "fact_education": {
+   "en": "Ph.D. (cand.) · MBA · B.Sc. CS",
+   "th": "ปริญญาเอก (ผู้สมัคร) · MBA · วท.บ."
+  },
+  "fact_focus": {
+   "en": "AI · Healthcare Tech · Digital Transformation",
+   "th": "AI · เทคโนโลยีสุขภาพ · ดิจิทัล"
+  },
+  "fact_status": {
+   "en": "Open to advisory & collaboration",
+   "th": "เปิดรับงานที่ปรึกษา"
+  }
+ },
+ "stats": {
+  "en": [
+   [
+    "15+",
+    "Years in technology"
+   ],
+   [
+    "25+",
+    "Research publications"
+   ],
+   [
+    "3",
+    "Countries delivered (TH · CH · US)"
+   ],
+   [
+    "10+",
+    "Government agencies served"
+   ]
+  ],
+  "th": [
+   [
+    "15+",
+    "ปีในสายเทคโนโลยี"
+   ],
+   [
+    "25+",
+    "ผลงานวิจัยตีพิมพ์"
+   ],
+   [
+    "3",
+    "ประเทศที่ส่งมอบงาน (ไทย · สวิส · สหรัฐฯ)"
+   ],
+   [
+    "10+",
+    "หน่วยงานภาครัฐที่ร่วมงาน"
+   ]
+  ]
+ },
+ "expertise": {
+  "en": [
+   [
+    "🧠",
+    "AI & Computer Vision",
+    "Deep learning, YOLO object detection, and NLP — from research models to deployed diagnostic tools.",
+    [
+     "YOLO",
+     "Deep Learning",
+     "NLP",
+     "PyTorch"
+    ]
+   ],
+   [
+    "🏗️",
+    "Full-Stack & Architecture",
+    "Scalable systems end-to-end: microservices, APIs, and modern web/mobile frontends.",
+    [
+     ".NET Core",
+     "React",
+     "Angular",
+     "Node.js"
+    ]
+   ],
+   [
+    "☁️",
+    "Cloud & DevOps",
+    "Containerized, observable, CI/CD-driven platforms across major clouds.",
+    [
+     "Docker",
+     "Kubernetes",
+     "Azure",
+     "AWS",
+     "GCP"
+    ]
+   ],
+   [
+    "🩺",
+    "Healthcare & Research Tech",
+    "National AI health platforms, screening tools, and clinical systems with research rigor.",
+    [
+     "Medical Imaging",
+     "GIS",
+     "Screening"
+    ]
+   ],
+   [
+    "📈",
+    "Business & SME Consulting",
+    "MBA-grounded strategy, digital transformation, and certified SME coaching.",
+    [
+     "Strategy",
+     "MarTech",
+     "SME Coach"
+    ]
+   ],
+   [
+    "🎤",
+    "Speaking & Training",
+    "Turning complex technology into clear, actionable learning for any audience.",
+    [
+     "AI",
+     "Digital",
+     "E-commerce"
+    ]
+   ]
+  ],
+  "th": [
+   [
+    "🧠",
+    "AI และคอมพิวเตอร์วิทัศน์",
+    "Deep Learning, การตรวจจับวัตถุด้วย YOLO และ NLP ตั้งแต่โมเดลวิจัยจนถึงเครื่องมือวินิจฉัยใช้งานจริง",
+    [
+     "YOLO",
+     "Deep Learning",
+     "NLP",
+     "PyTorch"
+    ]
+   ],
+   [
+    "🏗️",
+    "Full-Stack และสถาปัตยกรรม",
+    "ระบบที่ขยายได้ครบวงจร: Microservices, API และฟรอนต์เอนด์เว็บ/โมบายสมัยใหม่",
+    [
+     ".NET Core",
+     "React",
+     "Angular",
+     "Node.js"
+    ]
+   ],
+   [
+    "☁️",
+    "คลาวด์และ DevOps",
+    "แพลตฟอร์มแบบคอนเทนเนอร์ พร้อม CI/CD บนคลาวด์ชั้นนำ",
+    [
+     "Docker",
+     "Kubernetes",
+     "Azure",
+     "AWS",
+     "GCP"
+    ]
+   ],
+   [
+    "🩺",
+    "เทคโนโลยีสุขภาพและงานวิจัย",
+    "แพลตฟอร์ม AI สาธารณสุขระดับประเทศ เครื่องมือคัดกรอง และระบบทางคลินิกที่อิงงานวิจัย",
+    [
+     "Medical Imaging",
+     "GIS",
+     "Screening"
+    ]
+   ],
+   [
+    "📈",
+    "ธุรกิจและที่ปรึกษา SME",
+    "กลยุทธ์บนพื้นฐาน MBA การเปลี่ยนผ่านดิจิทัล และการโค้ช SME ที่ได้รับการรับรอง",
+    [
+     "Strategy",
+     "MarTech",
+     "SME Coach"
+    ]
+   ],
+   [
+    "🎤",
+    "วิทยากรและฝึกอบรม",
+    "แปลงเทคโนโลยีที่ซับซ้อนให้เป็นการเรียนรู้ที่เข้าใจง่ายและนำไปใช้ได้จริง",
+    [
+     "AI",
+     "Digital",
+     "E-commerce"
+    ]
+   ]
+  ]
+ },
+ "consulting": {
+  "en": [
+   [
+    "Registered Thai Consultant",
+    "Public Debt Management Office (PDMO), Ministry of Finance — Thai Consultant Database",
+    "Registered consultant in the national Thai Consultant Database.",
+    "2024–Present"
+   ],
+   [
+    "SME Coach (in-depth consultant)",
+    "Thai SME-GP [ISMED]",
+    "Marketing strategy, government procurement, ISO, finance/funding.",
+    "2022–Present"
+   ],
+   [
+    "Speaker & in-depth consultant",
+    "Thai SME-GP [SSRN: Isan + Northern]",
+    "Gov procurement, MarTech, SME ONE ID, Google Business, Canva, photography.",
+    "2023–Present"
+   ],
+   [
+    "Speaker & in-depth consultant",
+    "Thai SME-GP [SSRU Isan]",
+    "Gov procurement, MarTech, ISO/GMP/MiT, Google Business, Canva + continued MSME consulting.",
+    "2024–Present"
+   ],
+   [
+    "Freelance Business & Digital Consultant",
+    "Independent",
+    "Online marketing, import–export, packaging design.",
+    "2022–2024"
+   ],
+   [
+    "Business Consultant",
+    "KASIRA HOUSE Co., Ltd.",
+    "Digital transformation & business strategy.",
+    "2019–Present"
+   ],
+   [
+    "Cybersecurity Consultant",
+    "Big Boom Asia Co., Ltd.",
+    "Information security advisory.",
+    "2019–Present"
+   ],
+   [
+    "Expert Lab Verification (Helminths)",
+    "Department of Disease Control (กองโรคติดต่อทั่วไป), MoPH",
+    "Stool helminth verification by Formalin-Ether Concentration Technique",
+    "2020–Present"
+   ]
+  ],
+  "th": [
+   [
+    "ที่ปรึกษาไทย (ขึ้นทะเบียน)",
+    "Public Debt Management Office (PDMO), Ministry of Finance — Thai Consultant Database",
+    "ขึ้นทะเบียนที่ปรึกษาไทย ศูนย์ข้อมูลที่ปรึกษา สำนักงานบริหารหนี้สาธารณะ (สบน.)",
+    "2024–Present"
+   ],
+   [
+    "โค้ช/ที่ปรึกษาเชิงลึก SME",
+    "Thai SME-GP [ISMED]",
+    "กลยุทธ์การตลาด การจัดซื้อจัดจ้างภาครัฐ ISO การเงิน/แหล่งทุน",
+    "2022–Present"
+   ],
+   [
+    "วิทยากรและที่ปรึกษาเชิงลึก",
+    "Thai SME-GP [SSRN: Isan + Northern]",
+    "จัดซื้อจัดจ้างภาครัฐ MarTech, SME ONE ID, Google Business, Canva, การถ่ายภาพ",
+    "2023–Present"
+   ],
+   [
+    "วิทยากรและที่ปรึกษาเชิงลึก",
+    "Thai SME-GP [SSRU Isan]",
+    "จัดซื้อจัดจ้างภาครัฐ MarTech, ISO/GMP/MiT, Google Business, Canva และที่ปรึกษา MSME ต่อเนื่อง",
+    "2024–Present"
+   ],
+   [
+    "ที่ปรึกษาธุรกิจและดิจิทัลอิสระ",
+    "Independent",
+    "การตลาดออนไลน์ นำเข้า–ส่งออก ออกแบบบรรจุภัณฑ์",
+    "2022–2024"
+   ],
+   [
+    "ที่ปรึกษาธุรกิจ",
+    "KASIRA HOUSE Co., Ltd.",
+    "การเปลี่ยนผ่านดิจิทัลและกลยุทธ์ธุรกิจ",
+    "2019–Present"
+   ],
+   [
+    "ที่ปรึกษาความปลอดภัยสารสนเทศ",
+    "Big Boom Asia Co., Ltd.",
+    "ที่ปรึกษาความมั่นคงปลอดภัยสารสนเทศ",
+    "2019–Present"
+   ],
+   [
+    "ผู้เชี่ยวชาญตรวจยืนยันหนอนพยาธิ",
+    "Department of Disease Control (กองโรคติดต่อทั่วไป), MoPH",
+    "ตรวจยืนยันชนิดหนอนพยาธิในอุจจาระด้วยวิธี Formalin-Ether Concentration",
+    "2020–Present"
+   ]
+  ]
+ },
+ "speaking": {
+  "en": [
+   [
+    "May–Jun 2026",
+    "Chantawapi Co. / Thai Media Fund",
+    "Media & AI literacy for early-childhood teachers",
+    "Speaker/Trainer"
+   ],
+   [
+    "10 Sep 2025",
+    "Vongchavalitkul University",
+    "Smart Public Health & Occupational Safety: Using Technology & AI Wisely",
+    "Speaker/Trainer"
+   ],
+   [
+    "6–10 Aug 2025",
+    "Khonburi School, Nakhon Ratchasima PAO",
+    "E-Sport skills training",
+    "Speaker/Trainer"
+   ],
+   [
+    "1 Apr 2025",
+    "Nakhon Ratchasima Rajabhat University",
+    "Job-hunting techniques & essential skills in the digital era",
+    "Speaker/Trainer"
+   ],
+   [
+    "Jan 2024-Dec 2025",
+    "TRUE Digital",
+    "True Digital Community Builder 2024 - 2025",
+    "Speaker/Trainer"
+   ],
+   [
+    "Oct 2023",
+    "Suan Sunandha Rajabhat University",
+    "Green Tourism for community-based tourism",
+    "Speaker/Trainer"
+   ],
+   [
+    "Oct 2022-Sep 2025",
+    "Office of SMEs Promotion (OSMEP)",
+    "AI for MSME",
+    "Speaker/Trainer"
+   ],
+   [
+    "Nov 2022–Jan 2026",
+    "Suan Sunandha Rajabhat University",
+    "SME Business Development Services (BDS) Market",
+    "Speaker/Trainer"
+   ],
+   [
+    "Jan 2022–Jan 2026",
+    "Suan Sunandha Rajabhat University",
+    "Thai SME-GP",
+    "Speaker/Trainer"
+   ],
+   [
+    "Jan 2022-Present",
+    "ETDA",
+    "ETDA Digital Citizen (EDC)",
+    "Speaker/Trainer"
+   ],
+   [
+    "Oct 2020-Present",
+    "Department of Disease Control",
+    "Artificial Intelligence for Automated Microscopic Helminth Screening",
+    "Speaker/Trainer"
+   ],
+   [
+    "17 Jan 2020",
+    "Department of Health (Bureau of Elderly Health), MoPH",
+    "Care Manager / Caregiver (70/420 hr) curriculum & local elderly-care volunteers",
+    "Speaker/Trainer"
+   ],
+   [
+    "Jan 2019-Present",
+    "Ministry of Social Development & Human Security",
+    "OTOP Nawatwithi Community-Based Tourism (Nakhon Ratchasima and Buriram)",
+    "Speaker/Trainer"
+   ],
+   [
+    "Oct 2018-Sep 2024",
+    "Ministry of Public Health",
+    "AI in healthcare",
+    "Speaker/Trainer"
+   ]
+  ],
+  "th": [
+   [
+    "May–Jun 2026",
+    "บริษัท จันทวาปี จำกัด / กองทุนพัฒนาสื่อปลอดภัยและสร้างสรรค์",
+    "การรู้เท่าทันสื่อและ AI สำหรับครูปฐมวัย",
+    "Speaker/Trainer"
+   ],
+   [
+    "10 Sep 2025",
+    "มหาวิทยาลัยวงษ์ชวลิตกุล",
+    "Smart Public Health & Occupational Safety: ใช้เทคโนโลยีและ AI อย่างชาญฉลาด",
+    "Speaker/Trainer"
+   ],
+   [
+    "6–10 Aug 2025",
+    "โรงเรียนครบุรี อบจ.นครราชสีมา",
+    "ถ่ายทอดทักษะกีฬา E-Sport",
+    "Speaker/Trainer"
+   ],
+   [
+    "1 Apr 2025",
+    "มหาวิทยาลัยราชภัฏนครราชสีมา",
+    "เทคนิคการหางานและทักษะที่จำเป็นในยุคดิจิทัล",
+    "Speaker/Trainer"
+   ],
+   [
+    "Jan 2024-Dec 2025",
+    "ทรู ดิจิทัล",
+    "True Digital Community Builder 2024 - 2025",
+    "Speaker/Trainer"
+   ],
+   [
+    "Oct 2023",
+    "มหาวิทยาลัยราชภัฏสวนสุนันทา",
+    "การท่องเที่ยวสีเขียวโดยชุมชน",
+    "Speaker/Trainer"
+   ],
+   [
+    "Oct 2022-Sep 2025",
+    "สำนักงานส่งเสริมวิสาหกิจขนาดกลางและขนาดย่อม (สสว.)",
+    "อบรม AI สำหรับ MSME",
+    "Speaker/Trainer"
+   ],
+   [
+    "Nov 2022–Jan 2026",
+    "มหาวิทยาลัยราชภัฏสวนสุนันทา",
+    "ตลาดบริการพัฒนาธุรกิจ SME",
+    "Speaker/Trainer"
+   ],
+   [
+    "Jan 2022–Jan 2026",
+    "มหาวิทยาลัยราชภัฏสวนสุนันทา",
+    "Thai SME-GP",
+    "Speaker/Trainer"
+   ],
+   [
+    "Jan 2022-Present",
+    "สพธอ. (ETDA)",
+    "การสร้างความตระหนักรู้ในการใช้อินเทอร์เน็ต ETDA Digital Citizen (EDC)",
+    "Speaker/Trainer"
+   ],
+   [
+    "Oct 2020-Present",
+    "กรมควบคุมโรค",
+    "AI สำหรับตรวจคัดกรองหนอนพยาธิด้วยกล้องจุลทรรศน์อัตโนมัติ",
+    "Speaker/Trainer"
+   ],
+   [
+    "17 Jan 2020",
+    "กรมอนามัย (สำนักอนามัยผู้สูงอายุ) กระทรวงสาธารณสุข",
+    "แนวทางหลักสูตร Care Manager / Caregiver (70/420 ชม.) และอาสาสมัครบริบาลท้องถิ่น",
+    "Speaker/Trainer"
+   ],
+   [
+    "Jan 2019-Present",
+    "กระทรวงการพัฒนาสังคมและความมั่นคงของมนุษย์",
+    "OTOP นวัตวิถี พื้นที่จังหวัดนครราชสีมา และบุรีรัมย์",
+    "Speaker/Trainer"
+   ],
+   [
+    "Oct 2018-Sep 2024",
+    "กระทรวงสาธารณสุข",
+    "AI ด้านสุขภาพ",
+    "Speaker/Trainer"
+   ]
+  ]
+ },
+ "facts": {
+  "en": [
+   [
+    "Education",
+    "Ph.D. (cand.) · MBA · B.Sc. CS"
+   ],
+   [
+    "Based in",
+    "Nakhon Ratchasima, Thailand"
+   ],
+   [
+    "Focus",
+    "AI · Healthcare Tech · Digital Transformation"
+   ],
+   [
+    "Languages",
+    "Thai — Native  ·  English — Professional (CEFR B1)"
+   ],
+   [
+    "Status",
+    "Open to advisory & collaboration"
+   ]
+  ],
+  "th": [
+   [
+    "การศึกษา",
+    "ปริญญาเอก (ผู้สมัคร) · MBA · วท.บ."
+   ],
+   [
+    "ฐานที่ตั้ง",
+    "นครราชสีมา ประเทศไทย"
+   ],
+   [
+    "ความสนใจ",
+    "AI · เทคโนโลยีสุขภาพ · ดิจิทัล"
+   ],
+   [
+    "ภาษา",
+    "ไทย — ภาษาแม่  ·  อังกฤษ — เชิงวิชาชีพ (CEFR B1)"
+   ],
+   [
+    "สถานะ",
+    "เปิดรับงานที่ปรึกษา"
+   ]
+  ]
+ },
+ "featured_pub": [
+  "Journal",
+  "Jenwithee T, Meererksom T, Limpanont Y, Sripa B, Laha T, Suwannatrai AT. (2026). Automated real-time surveillance of Bithynia snails using a comparative YOLO based approach for liver fluke host detection. Scientific Reports, 16, 14886.",
+  "2026",
+  "https://doi.org/10.1038/s41598-026-43387-x"
+ ],
  "profile": {
   "name": {
    "en": "Thirayu Meererksom",
