@@ -412,6 +412,7 @@ footer{border-top:1px solid var(--line);padding:34px 0;color:var(--mut);font-siz
 </footer>
 
 <script src="assets/data.js"></script>
+<script src="assets/team.js"></script>
 <script>
 const I18N = {
  en:{
@@ -518,6 +519,7 @@ if (window.CVDATA) {
   const cd = window.CVDATA;
   ["timeline","projects","pubs","clients","topics","members","gallery","documents","education","certifications","skills","publications"].forEach(k => { if (cd[k]) DATA[k] = cd[k]; });
 }
+if (window.CVTEAM) DATA.team = window.CVTEAM;   // co-workers generated from co-workers/*.xlsx
 let lang = localStorage.getItem("lang") || "en";
 let theme = localStorage.getItem("theme") || "dark";
 const $ = s => document.querySelector(s);
